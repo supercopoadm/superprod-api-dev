@@ -1,0 +1,5 @@
+ALTER TABLE producao
+MODIFY COLUMN horainicio VARCHAR(255);
+
+ALTER TABLE producao
+MODIFY COLUMN horafinal VARCHAR(255);
