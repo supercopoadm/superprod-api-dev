@@ -22,7 +22,7 @@ public class LogSistema {
 	private Integer id;
 	private String comando;
 	@JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss:SSS")
-	@Column(columnDefinition = "datetime")
+	@Column(columnDefinition = "timestamp")
 	private OffsetDateTime datagravacao;
 	private String loginusuario;
 	private Boolean status;
