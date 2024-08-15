@@ -1,7 +1,6 @@
 package com.romario.superprod.domain.dto.flat;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 
 import javax.persistence.Column;
@@ -38,7 +37,7 @@ public class EmpresaFlat {
 	private String  whats;
 	private String email;
 	private Boolean status = Boolean.TRUE;
-	private LocalDateTime datagravacao;
+	private OffsetDateTime datagravacao;
 	private String loginusuario;
 	public Integer getId() {
 		return id;
@@ -143,14 +142,13 @@ public class EmpresaFlat {
 	public void setStatus(Boolean status) {
 		this.status = status;
 	}
-	
-
-	public LocalDateTime getDatagravacao() {
+	public OffsetDateTime getDatagravacao() {
 		return datagravacao;
 	}
-	public void setDatagravacao(LocalDateTime datagravacao) {
+	public void setDatagravacao(OffsetDateTime datagravacao) {
 		this.datagravacao = datagravacao;
 	}
+
 	public String getLoginusuario() {
 		return loginusuario;
 	}
@@ -160,7 +158,7 @@ public class EmpresaFlat {
 	public EmpresaFlat(Integer id, String cidade, String razaosocial, BigDecimal valor, String cpfoucnpj,
 			String naturezapessoa, String uf, String cep, String logradouro, String numero, String complemento,
 			String bairro, String nomecontato, String telefone, String whats, String email, Boolean status,
-			LocalDateTime datagravacao, String loginusuario) {
+			OffsetDateTime datagravacao, String loginusuario) {
 		super();
 		this.id = id;
 		this.cidade = cidade;

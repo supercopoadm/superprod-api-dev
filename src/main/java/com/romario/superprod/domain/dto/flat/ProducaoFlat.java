@@ -1,6 +1,5 @@
 package com.romario.superprod.domain.dto.flat;
 
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.Date;
 
@@ -37,7 +36,7 @@ public class ProducaoFlat {
 	private String nomefuncionario;
 	private Boolean status = Boolean.TRUE;
 
-	private LocalDateTime datagravacao;
+	private OffsetDateTime datagravacao;
 	private String loginusuario;
 
 	public ProducaoFlat() {
@@ -47,7 +46,7 @@ public class ProducaoFlat {
 			Integer perda, Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal,
 			String turno, Operador operador, Integer idoperador, String nomeOperador, Maquina maquina,
 			Integer idmaquina, Integer nomeMaquina, Produto produto, Integer idprouto, String nomeProduto,
-			Boolean status, LocalDateTime datagravacao, String loginusuario,Funcionario funcionario,
+			Boolean status, OffsetDateTime datagravacao, String loginusuario,Funcionario funcionario,
 			Integer idfuncionario, String nomefuncionario) {
 		this.id = id;
 		this.obs = obs;
@@ -221,13 +220,11 @@ public class ProducaoFlat {
 		this.turno = turno;
 	}
 
-	 
-
-	public LocalDateTime getDatagravacao() {
+	public OffsetDateTime getDatagravacao() {
 		return datagravacao;
 	}
 
-	public void setDatagravacao(LocalDateTime datagravacao) {
+	public void setDatagravacao(OffsetDateTime datagravacao) {
 		this.datagravacao = datagravacao;
 	}
 

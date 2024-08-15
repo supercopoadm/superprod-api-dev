@@ -1,6 +1,5 @@
 package com.romario.superprod.domain.dto.flat;
 
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.HashSet;
 import java.util.Objects;
@@ -19,14 +18,14 @@ public class MaquinaFlatInsert {
 	private Integer numero;
 	private Boolean status;
 	private Set<MoldeMaquinaFlatUpdate> moldeMaquina = new HashSet<>();
-	private LocalDateTime datagravacao;
+	private OffsetDateTime datagravacao;
 	private String loginusuario;
 
 	public MaquinaFlatInsert() {
 	}
 
 	public MaquinaFlatInsert(Integer id, String nome, String peso, Integer numero, Boolean status,
-			Set<MoldeMaquinaFlatUpdate> moldeMaquina, LocalDateTime datagravacao, String loginusuario) {
+			Set<MoldeMaquinaFlatUpdate> moldeMaquina, OffsetDateTime datagravacao, String loginusuario) {
 		this.id = id;
 		this.nome = nome;
 		this.peso = peso;
@@ -87,13 +86,11 @@ public class MaquinaFlatInsert {
 		this.moldeMaquina = moldeMaquina;
 	}
 
-	
-
-	public LocalDateTime getDatagravacao() {
+	public OffsetDateTime getDatagravacao() {
 		return datagravacao;
 	}
 
-	public void setDatagravacao(LocalDateTime datagravacao) {
+	public void setDatagravacao(OffsetDateTime datagravacao) {
 		this.datagravacao = datagravacao;
 	}
 

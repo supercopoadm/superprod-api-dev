@@ -1,6 +1,5 @@
 package com.romario.superprod.domain.dto.flat;
 
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 
 import com.romario.superprod.domain.Produto;
@@ -11,13 +10,13 @@ public class ProdutoFlat {
 	private String nome;
 	private String sku;
 	private Boolean status = Boolean.TRUE;
-	private LocalDateTime datagravacao;
+	private OffsetDateTime datagravacao;
 	private String loginusuario;
 
 	public ProdutoFlat() {
 	}
 
-	public ProdutoFlat(Integer id, String nome, String sku, Boolean status, LocalDateTime datagravacao,
+	public ProdutoFlat(Integer id, String nome, String sku, Boolean status, OffsetDateTime datagravacao,
 			String loginusuario) {
 		this.id = id;
 		this.nome = nome;
@@ -69,12 +68,11 @@ public class ProdutoFlat {
 		this.status = status;
 	}
 
-
-	public LocalDateTime getDatagravacao() {
+	public OffsetDateTime getDatagravacao() {
 		return datagravacao;
 	}
 
-	public void setDatagravacao(LocalDateTime datagravacao) {
+	public void setDatagravacao(OffsetDateTime datagravacao) {
 		this.datagravacao = datagravacao;
 	}
 
