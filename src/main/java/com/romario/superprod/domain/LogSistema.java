@@ -1,5 +1,6 @@
 package com.romario.superprod.domain;
 
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 
 import javax.persistence.Column;
@@ -23,7 +24,7 @@ public class LogSistema {
 	private String comando;
 	@JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss:SSS")
 	@Column(columnDefinition = "timestamp")
-	private OffsetDateTime datagravacao;
+	private LocalDateTime datagravacao;
 	private String loginusuario;
 	private Boolean status;
 	@JsonIgnore
@@ -78,7 +79,7 @@ public class LogSistema {
 	public LogSistema() {
 	}
 
-	public LogSistema(Integer id, String comando, OffsetDateTime datagravacao, String loginusuario, Boolean status) {
+	public LogSistema(Integer id, String comando, LocalDateTime datagravacao, String loginusuario, Boolean status) {
 		this.id = id;
 		this.comando = comando;
 		this.datagravacao = datagravacao;
@@ -86,7 +87,7 @@ public class LogSistema {
 		this.status = true;
 	}
 
-	public LogSistema(Integer id, String comando, OffsetDateTime datagravacao, String usuariologado, Usuario usuario) {
+	public LogSistema(Integer id, String comando, LocalDateTime datagravacao, String usuariologado, Usuario usuario) {
 		this.id = id;
 		this.comando = comando;
 		this.datagravacao = datagravacao;
@@ -95,7 +96,7 @@ public class LogSistema {
 		this.usuario = usuario;
 	}
 
-	public LogSistema(Integer id, String comando, OffsetDateTime datagravacao, String usuariologado, Empresa empresa) {
+	public LogSistema(Integer id, String comando, LocalDateTime datagravacao, String usuariologado, Empresa empresa) {
 		this.id = id;
 		this.comando = comando;
 		this.datagravacao = datagravacao;
@@ -104,7 +105,7 @@ public class LogSistema {
 		this.empresa = empresa;
 	}
 
-	public LogSistema(Integer id, String comando, OffsetDateTime datagravacao, String usuariologado, Molde molde) {
+	public LogSistema(Integer id, String comando, LocalDateTime datagravacao, String usuariologado, Molde molde) {
 		super();
 		this.id = id;
 		this.comando = comando;
@@ -114,7 +115,7 @@ public class LogSistema {
 		this.molde = molde;
 	}
 
-	public LogSistema(Integer id, String comando, OffsetDateTime datagravacao, String usuariologado, Produto produto) {
+	public LogSistema(Integer id, String comando, LocalDateTime datagravacao, String usuariologado, Produto produto) {
 		super();
 		this.id = id;
 		this.comando = comando;
@@ -124,7 +125,7 @@ public class LogSistema {
 		this.produto = produto;
 	}
 
-	public LogSistema(Integer id, String comando, OffsetDateTime datagravacao, String usuariologado, Maquina maquina) {
+	public LogSistema(Integer id, String comando, LocalDateTime datagravacao, String usuariologado, Maquina maquina) {
 		super();
 		this.id = id;
 		this.comando = comando;
@@ -134,7 +135,7 @@ public class LogSistema {
 		this.maquina = maquina;
 	}
 
-	public LogSistema(Integer id, String comando, OffsetDateTime datagravacao, String usuariologado,
+	public LogSistema(Integer id, String comando, LocalDateTime datagravacao, String usuariologado,
 			Operador operador) {
 		super();
 		this.id = id;
@@ -145,7 +146,7 @@ public class LogSistema {
 		this.operador = operador;
 	}
 
-	public LogSistema(Integer id, String comando, OffsetDateTime datagravacao, String usuariologado,
+	public LogSistema(Integer id, String comando, LocalDateTime datagravacao, String usuariologado,
 			Producao producao) {
 		super();
 		this.id = id;
@@ -156,7 +157,7 @@ public class LogSistema {
 		this.producao = producao;
 	}
 
-	public LogSistema(Integer id, String comando, OffsetDateTime datagravacao, String usuariologado, Chamado chamado) {
+	public LogSistema(Integer id, String comando, LocalDateTime datagravacao, String usuariologado, Chamado chamado) {
 		super();
 		this.id = id;
 		this.comando = comando;
@@ -166,7 +167,7 @@ public class LogSistema {
 		this.chamado = chamado;
 	}
 
-	public LogSistema(Integer id, String comando, OffsetDateTime datagravacao, String usuariologado,
+	public LogSistema(Integer id, String comando, LocalDateTime datagravacao, String usuariologado,
 			Funcionario funcionario) {
 		super();
 		this.id = id;
@@ -193,11 +194,12 @@ public class LogSistema {
 		this.comando = comando;
 	}
 
-	public OffsetDateTime getDatagravacao() {
+
+	public LocalDateTime getDatagravacao() {
 		return datagravacao;
 	}
 
-	public void setDatagravacao(OffsetDateTime datagravacao) {
+	public void setDatagravacao(LocalDateTime datagravacao) {
 		this.datagravacao = datagravacao;
 	}
 
