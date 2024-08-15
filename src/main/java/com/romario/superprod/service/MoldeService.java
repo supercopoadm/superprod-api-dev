@@ -63,14 +63,20 @@ public class MoldeService {
 	
 	
 	public List<MoldeFlat> findAllSql() {
-		
-		List<Molde> moldes = repo.findAllSql(tenantUsuario.buscarOuFalharInt());
-		List<MoldeFlat> moldeFlat = new ArrayList<>();
-		for (Molde obj : moldes) {
-			MoldeFlat opeFlat = new MoldeFlat(obj);
-			moldeFlat.add(opeFlat);
-		}
-		return moldeFlat;
+	    List<Molde> moldes = repo.findAllSql(tenantUsuario.buscarOuFalharInt());
+	    List<MoldeFlat> moldeFlat = new ArrayList<>();
+	    for (Molde obj : moldes) {
+	        // Verifique o valor da data antes da conversão
+	        System.out.println("Data original: " + obj.getLogs().getDatagravacao());
+	        
+	        MoldeFlat opeFlat = new MoldeFlat(obj);
+	        
+	        // Verifique o valor da data após a conversão
+	        System.out.println("Data convertida: " + opeFlat.getDatagravacao());
+	        
+	        moldeFlat.add(opeFlat);
+	    }
+	    return moldeFlat;
 	}
 
 
