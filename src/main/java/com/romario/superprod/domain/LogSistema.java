@@ -21,7 +21,7 @@ public class LogSistema {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String comando;
-	@JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss:SSS")
+	@JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss:SSSXXX")
 	@Column(columnDefinition = "datetime")
 	private OffsetDateTime datagravacao;
 	private String loginusuario;

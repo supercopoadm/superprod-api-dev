@@ -15,7 +15,7 @@ public class MoldeFlat {
 	private String nome;
 	private String sku;
 	private String molde;
-	@JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss:SSS")
+	@JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss:SSSXXX")
 	@Column(columnDefinition = "datetime")
 	private OffsetDateTime datagravacao;
 	private String loginusuario;
