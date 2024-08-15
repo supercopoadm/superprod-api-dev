@@ -2,6 +2,9 @@ package com.romario.superprod.domain.dto.flat;
 
 import java.time.OffsetDateTime;
 
+import javax.persistence.Column;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.romario.superprod.domain.Molde;
 import com.romario.superprod.validation.molde.MoldeInsert;
 
@@ -12,6 +15,8 @@ public class MoldeFlat {
 	private String nome;
 	private String sku;
 	private String molde;
+	@JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss:SSS")
+	@Column(columnDefinition = "timestamp")
 	private OffsetDateTime datagravacao;
 	private String loginusuario;
 	private Boolean status = Boolean.TRUE;
