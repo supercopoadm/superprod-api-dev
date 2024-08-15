@@ -1,5 +1,6 @@
 package com.romario.superprod.service;
 
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,13 +26,13 @@ public class LogSistemaService {
         String usuarioLogado = daringSecurity.getUsuario();
         
 	    String comando = (acao + "  " + obj.toString());
-		LogSistema log = new LogSistema(null, comando, OffsetDateTime.now(), usuarioLogado, obj);
+		LogSistema log = new LogSistema(null, comando, LocalDateTime.now(), usuarioLogado, obj);
 		return log;		
 	}
 	public LogSistema insert(Maquina obj, String acao) {
         String usuarioLogado = daringSecurity.getUsuario();        
 	    String comando = (acao + "  " + obj.toString());
-		LogSistema log = new LogSistema(null, comando, OffsetDateTime.now(), usuarioLogado, obj);
+		LogSistema log = new LogSistema(null, comando, LocalDateTime.now(), usuarioLogado, obj);
 		return log;		
 	}
 	
@@ -39,20 +40,20 @@ public class LogSistemaService {
         String usuarioLogado = daringSecurity.getUsuario();
         
 	    String comando = (acao + "  " + obj.toString());
-		LogSistema log = new LogSistema(null, comando, OffsetDateTime.now(), usuarioLogado, obj);
+		LogSistema log = new LogSistema(null, comando, LocalDateTime.now(), usuarioLogado, obj);
 		return log;		
 	}
 	public LogSistema insert(Produto obj, String acao) {
         String usuarioLogado = daringSecurity.getUsuario();        
 	    String comando = (acao + "  " + obj.toString());
-		LogSistema log = new LogSistema(null, comando, OffsetDateTime.now(), usuarioLogado, obj);
+		LogSistema log = new LogSistema(null, comando, LocalDateTime.now(), usuarioLogado, obj);
 		return log;		
 	}
 	
 	public LogSistema insert(Producao obj, String acao) {
         String usuarioLogado = daringSecurity.getUsuario();        
 	    String comando = (acao + "  " + obj.toString());
-		LogSistema log = new LogSistema(null, comando, OffsetDateTime.now(), usuarioLogado, obj);
+		LogSistema log = new LogSistema(null, comando, LocalDateTime.now(), usuarioLogado, obj);
 		return log;		
 	}
 
@@ -60,27 +61,27 @@ public class LogSistemaService {
         String usuarioLogado = daringSecurity.getUsuario();
         
 	    String comando = (string + "  " + obj.toString());
-		LogSistema log = new LogSistema(null, comando, OffsetDateTime.now(), usuarioLogado, obj);
+		LogSistema log = new LogSistema(null, comando, LocalDateTime.now(), usuarioLogado, obj);
 		return log;	
 	}
 	public LogSistema insert(Empresa obj, String acao) {
 		String usuarioLogado = daringSecurity.getUsuario();
 	    String comando = (acao + obj.toString());
-		LogSistema log = new LogSistema(null, comando, OffsetDateTime.now(), usuarioLogado, obj);
+		LogSistema log = new LogSistema(null, comando, LocalDateTime.now(), usuarioLogado, obj);
 		return log;
 	}
 	
 	public LogSistema insert(Chamado obj, String acao) {
 		String usuarioLogado = daringSecurity.getUsuario();
 		String comando = (acao + obj.toString());
-		LogSistema log = new LogSistema(null, comando, OffsetDateTime.now(), usuarioLogado, obj);
+		LogSistema log = new LogSistema(null, comando, LocalDateTime.now(), usuarioLogado, obj);
 		return log;
 	}
 	
 	public LogSistema insert(Funcionario obj, String acao) {
 		String usuarioLogado = daringSecurity.getUsuario();
 		String comando = (acao + obj.toString());
-		LogSistema log = new LogSistema(null, comando, OffsetDateTime.now(), usuarioLogado, obj);
+		LogSistema log = new LogSistema(null, comando, LocalDateTime.now(), usuarioLogado, obj);
 		return log;
 	}
 

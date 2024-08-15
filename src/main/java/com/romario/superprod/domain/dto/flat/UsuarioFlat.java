@@ -1,5 +1,6 @@
 package com.romario.superprod.domain.dto.flat;
 
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class UsuarioFlat {
 	private String email;
 	private String perfil;
 	private String senha;
-	private OffsetDateTime datagravacao;
+	private LocalDateTime datagravacao;
 	private String loginusario;
 
 	public String getPerfil() {
@@ -30,11 +31,13 @@ public class UsuarioFlat {
 		super();
 	}
 
-	public OffsetDateTime getDatagravacao() {
+	
+
+	public LocalDateTime getDatagravacao() {
 		return datagravacao;
 	}
 
-	public void setDatagravacao(OffsetDateTime datagravacao) {
+	public void setDatagravacao(LocalDateTime datagravacao) {
 		this.datagravacao = datagravacao;
 	}
 
@@ -114,7 +117,7 @@ public class UsuarioFlat {
 	}
 
 	public UsuarioFlat(Integer id, Boolean status, String nome, String login, String email, String senha,
-			OffsetDateTime dataGravacao, String loginusario, List<PermissaoFront> permissoes) {
+			LocalDateTime dataGravacao, String loginusario, List<PermissaoFront> permissoes) {
 		super();
 		this.id = id;
 		this.status = status;
