@@ -50,6 +50,9 @@ public class Producao {
 
 	@ManyToOne
 	private Funcionario funcionario;
+	
+	@ManyToOne
+	private Atributo atributo;
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "producao")
@@ -60,7 +63,8 @@ public class Producao {
 
 	public Producao(Integer id, String obs, Date dataprevisao, Integer quantidade, String cor, Integer perda,
 			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String turno,
-			Boolean status, Operador operador, Tenant tenant, Maquina maquina, Produto produto, List<LogSistema> logs, Funcionario funcionario) {
+			Boolean status, Operador operador, Tenant tenant, Maquina maquina, Produto produto, List<LogSistema> logs, Funcionario funcionario,
+			Atributo atributo) {
 		this.id = id;
 		this.obs = obs;
 		this.dataprevisao = dataprevisao;
@@ -79,6 +83,7 @@ public class Producao {
 		this.produto = produto;
 		this.logs = logs;
 		this.funcionario = funcionario;
+		this.atributo = atributo;
 	}
 
 	public Producao(@Valid ProducaoNewDTO obj) {
@@ -112,6 +117,8 @@ public class Producao {
 		this.maquina = obj.getMaquina();
 		this.operador = obj.getOperador();
 		this.produto = obj.getProduto();
+		this.funcionario = obj.getFuncionario();
+		this.atributo = obj.getAtributo();
 	}
 
 	public Producao(ProducaoFlat obj) {
@@ -131,6 +138,7 @@ public class Producao {
 		this.operador = obj.getOperador();
 		this.produto = obj.getProduto();
 		this.funcionario = obj.getFuncionario();
+		this.atributo = obj.getAtributo();
 	}
 
 	public Integer getId() {
@@ -307,5 +315,14 @@ public class Producao {
 	public void setFuncionario(Funcionario funcionario) {
 		this.funcionario = funcionario;
 	}
+
+	public Atributo getAtributo() {
+		return atributo;
+	}
+
+	public void setAtributo(Atributo atributo) {
+		this.atributo = atributo;
+	}
+	
 
 }

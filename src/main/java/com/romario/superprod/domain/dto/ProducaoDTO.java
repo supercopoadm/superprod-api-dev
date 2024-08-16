@@ -3,6 +3,7 @@ package com.romario.superprod.domain.dto;
 import java.time.OffsetDateTime;
 import java.util.Date;
 
+import com.romario.superprod.domain.Atributo;
 import com.romario.superprod.domain.Funcionario;
 import com.romario.superprod.domain.Maquina;
 import com.romario.superprod.domain.Operador;
@@ -34,6 +35,9 @@ public class ProducaoDTO {
 	private Funcionario funcionario;
 	private Integer idfuncionario;
 	private String nomefuncionario;
+	private Atributo atributo;
+	private Integer idatributo;
+	private String nomeatributo;
 
 	public ProducaoDTO() {
 	}
@@ -42,7 +46,9 @@ public class ProducaoDTO {
 			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String turno,
 			Boolean status, Operador operador, Integer idoperador, String nomeoperador, Maquina maquina,
 			Integer idmaquina, Integer nomemaquina, Produto produto, Integer idproduto, String nomeproduto,
-			Funcionario funcionario, Integer idfuncionario, String nomefuncionario) {
+			Funcionario funcionario, Integer idfuncionario, String nomefuncionario, Atributo atributo,
+			Integer idatributo, String nomeatributo) {
+		super();
 		this.id = id;
 		this.obs = obs;
 		this.dataprevisao = dataprevisao;
@@ -67,6 +73,9 @@ public class ProducaoDTO {
 		this.funcionario = funcionario;
 		this.idfuncionario = idfuncionario;
 		this.nomefuncionario = nomefuncionario;
+		this.atributo = atributo;
+		this.idatributo = idatributo;
+		this.nomeatributo = nomeatributo;
 	}
 
 	public Integer getId() {
@@ -283,6 +292,30 @@ public class ProducaoDTO {
 
 	public void setNomefuncionario(String nomefuncionario) {
 		this.nomefuncionario = nomefuncionario;
+	}
+
+	public Atributo getAtributo() {
+		return atributo;
+	}
+
+	public void setAtributo(Atributo atributo) {
+		this.atributo = atributo;
+	}
+
+	public Integer getIdatributo() {
+		return idatributo;
+	}
+
+	public void setIdatributo(Integer idatributo) {
+		this.idatributo = idatributo;
+	}
+
+	public String getNomeatributo() {
+		return nomeatributo;
+	}
+
+	public void setNomeatributo(String nomeatributo) {
+		this.nomeatributo = nomeatributo;
 	}
 
 }

@@ -5,6 +5,7 @@ import java.time.OffsetDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.romario.superprod.domain.Atributo;
 import com.romario.superprod.domain.Chamado;
 import com.romario.superprod.domain.Empresa;
 import com.romario.superprod.domain.Funcionario;
@@ -78,6 +79,13 @@ public class LogSistemaService {
 	}
 	
 	public LogSistema insert(Funcionario obj, String acao) {
+		String usuarioLogado = daringSecurity.getUsuario();
+		String comando = (acao + obj.toString());
+		LogSistema log = new LogSistema(null, comando, OffsetDateTime.now(), usuarioLogado, obj);
+		return log;
+	}
+	
+	public LogSistema insert(Atributo obj, String acao) {
 		String usuarioLogado = daringSecurity.getUsuario();
 		String comando = (acao + obj.toString());
 		LogSistema log = new LogSistema(null, comando, OffsetDateTime.now(), usuarioLogado, obj);

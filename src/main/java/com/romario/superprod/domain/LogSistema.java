@@ -74,6 +74,11 @@ public class LogSistema {
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "funcionario_id")
 	private Funcionario funcionario;
+	
+	@JsonIgnore
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "atributo_id")
+	private Atributo atributo;
 
 	public LogSistema() {
 	}
@@ -175,6 +180,17 @@ public class LogSistema {
 		this.loginusuario = usuariologado;
 		this.status = true;
 		this.funcionario = funcionario;
+	}
+	
+	public LogSistema(Integer id, String comando, OffsetDateTime datagravacao, String usuariologado,
+			Atributo atributo) {
+		super();
+		this.id = id;
+		this.comando = comando;
+		this.datagravacao = datagravacao;
+		this.loginusuario = usuariologado;
+		this.status = true;
+		this.atributo = atributo;
 	}
 
 	public Integer getId() {
@@ -296,5 +312,14 @@ public class LogSistema {
 	public void setFuncionario(Funcionario funcionario) {
 		this.funcionario = funcionario;
 	}
+
+	public Atributo getAtributo() {
+		return atributo;
+	}
+
+	public void setAtributo(Atributo atributo) {
+		this.atributo = atributo;
+	}
+	
 
 }

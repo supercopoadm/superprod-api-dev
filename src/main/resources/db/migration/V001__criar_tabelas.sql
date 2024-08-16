@@ -39,7 +39,7 @@ create table permissao
 engine=InnoDB default charset=utf8MB4;
 
 create table producao 
-(id integer not null auto_increment, dataprevicao datetime(6), dataproducao datetime(6), horafinal integer, horainicio integer, obs varchar(255), perda integer, piguimento varchar(255), quantidade integer, tempomaquina integer, turno varchar(255), maquina_id integer, operador_id integer, produto_id integer, tenant_id integer, primary key (id)) 
+(id integer not null auto_increment, dataprevicao datetime(6), dataproducao datetime(6), horafinal integer, horainicio integer, obs varchar(255), perda integer, piguimento varchar(255), quantidade integer, tempomaquina integer, turno varchar(255), maquina_id integer, operador_id integer, produto_id integer, tenant_id integer,  status bit, primary key (id)) 
 engine=InnoDB default charset=utf8MB4;
 
 create table produto 
@@ -51,7 +51,7 @@ create table tenant
 engine=InnoDB default charset=utf8MB4;
 
 create table usuario 
-(id integer not null auto_increment, gtenantativo integer, login varchar(255), nome varchar(255), senha varchar(255), status bit, tenantativo integer, primary key (id)) 
+(id integer not null auto_increment, gtenantativo integer, login varchar(255), nome varchar(255), senha varchar(255), status bit, tenantativo integer, tenant_id integer, primary key (id)) 
 engine=InnoDB default charset=utf8MB4;
 
 create table usuario_permissao 

@@ -3,6 +3,7 @@ package com.romario.superprod.domain.dto.flat;
 import java.time.OffsetDateTime;
 import java.util.Date;
 
+import com.romario.superprod.domain.Atributo;
 import com.romario.superprod.domain.Funcionario;
 import com.romario.superprod.domain.Maquina;
 import com.romario.superprod.domain.Operador;
@@ -34,6 +35,9 @@ public class ProducaoFlat {
 	private Funcionario funcionario;
 	private Integer idfuncionario;
 	private String nomefuncionario;
+	private Atributo atributo;
+	private Integer idatributo;
+	private String nomeatributo;
 	private Boolean status = Boolean.TRUE;
 
 	private OffsetDateTime datagravacao;
@@ -42,12 +46,12 @@ public class ProducaoFlat {
 	public ProducaoFlat() {
 	}
 
-	public ProducaoFlat(Integer id, String obs, Date dataprevisao, Integer quantidade, String cor,
-			Integer perda, Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal,
-			String turno, Operador operador, Integer idoperador, String nomeOperador, Maquina maquina,
-			Integer idmaquina, Integer nomeMaquina, Produto produto, Integer idprouto, String nomeProduto,
-			Boolean status, OffsetDateTime datagravacao, String loginusuario,Funcionario funcionario,
-			Integer idfuncionario, String nomefuncionario) {
+	public ProducaoFlat(Integer id, String obs, Date dataprevisao, Integer quantidade, String cor, Integer perda,
+			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String turno,
+			Operador operador, Integer idoperador, String nomeOperador, Maquina maquina, Integer idmaquina,
+			Integer nomeMaquina, Produto produto, Integer idprouto, String nomeProduto, Funcionario funcionario,
+			Integer idfuncionario, String nomefuncionario, Atributo atributo, Integer idatributo, String nomeatributo,
+			Boolean status, OffsetDateTime datagravacao, String loginusuario) {
 		this.id = id;
 		this.obs = obs;
 		this.dataprevisao = dataprevisao;
@@ -68,12 +72,15 @@ public class ProducaoFlat {
 		this.produto = produto;
 		this.idprouto = idprouto;
 		this.nomeProduto = nomeProduto;
-		this.status = status;
-		this.datagravacao = datagravacao;
-		this.loginusuario = loginusuario;
 		this.funcionario = funcionario;
 		this.idfuncionario = idfuncionario;
 		this.nomefuncionario = nomefuncionario;
+		this.atributo = atributo;
+		this.idatributo = idatributo;
+		this.nomeatributo = nomeatributo;
+		this.status = status;
+		this.datagravacao = datagravacao;
+		this.loginusuario = loginusuario;
 	}
 
 	public ProducaoFlat(Producao obj) {
@@ -101,10 +108,14 @@ public class ProducaoFlat {
 		this.idmaquina = obj.getMaquina().getId();
 		this.idoperador = obj.getOperador().getId();
 		this.idprouto = obj.getProduto().getId();
-		
+
 		this.funcionario = obj.getFuncionario();
 		this.idfuncionario = obj.getFuncionario().getId();
 		this.nomefuncionario = obj.getFuncionario().getNome();
+
+		this.atributo = obj.getAtributo();
+		this.idatributo = obj.getAtributo().getId();
+		this.nomeatributo = obj.getAtributo().getNome();
 
 	}
 
@@ -125,10 +136,12 @@ public class ProducaoFlat {
 		this.nomeProduto = obj.getProduto().getNome();
 		this.nomeMaquina = obj.getMaquina().getNumero();
 		this.nomefuncionario = obj.getFuncionario().getNome();
+		this.nomeatributo = obj.getAtributo().getNome();
 		// this.maquinaID = obj.getMaquina();
 		// this.produtoID = obj.getProduto();
 		this.datagravacao = obj.getLogs().getDatagravacao();
 		this.loginusuario = obj.getLogs().getLoginusuario();
+		this.status = obj.getStatus();
 	}
 
 	public Integer getId() {
@@ -146,7 +159,6 @@ public class ProducaoFlat {
 	public void setObs(String obs) {
 		this.obs = obs;
 	}
-
 
 	public Date getDataprevisao() {
 		return dataprevisao;
@@ -338,6 +350,30 @@ public class ProducaoFlat {
 
 	public void setNomefuncionario(String nomefuncionario) {
 		this.nomefuncionario = nomefuncionario;
+	}
+
+	public Atributo getAtributo() {
+		return atributo;
+	}
+
+	public void setAtributo(Atributo atributo) {
+		this.atributo = atributo;
+	}
+
+	public Integer getIdatributo() {
+		return idatributo;
+	}
+
+	public void setIdatributo(Integer idatributo) {
+		this.idatributo = idatributo;
+	}
+
+	public String getNomeatributo() {
+		return nomeatributo;
+	}
+
+	public void setNomeatributo(String nomeatributo) {
+		this.nomeatributo = nomeatributo;
 	}
 
 }

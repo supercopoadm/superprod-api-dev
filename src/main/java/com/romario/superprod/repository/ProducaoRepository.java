@@ -12,7 +12,7 @@ import com.romario.superprod.repository.query.ProducaoRepositoryQuery;
 @Repository
 public interface ProducaoRepository extends JpaRepository<Producao, Integer>, ProducaoRepositoryQuery{
 	
-	@Query(value= "select * from producao where status=1 and tenant_id = ? ", nativeQuery = true)
+	@Query(value= "select * from producao where status= 1 and tenant_id = ? ", nativeQuery = true)
 	List<Producao> findAllSql(int id);
 	
 	
@@ -20,7 +20,7 @@ public interface ProducaoRepository extends JpaRepository<Producao, Integer>, Pr
 	    		"where c.id = e.convenio_id and e.exame_id = ?", nativeQuery = true)
 	List<Producao> findAllSqlProd(int id);
 
-	 @Query(value= "select * from producao where status=0 and tenant_id = ?", nativeQuery = true)
+	 @Query(value= "select * from producao where status = 0 and tenant_id = ?", nativeQuery = true)
 	List<Producao> findAllSqlInativo(int id);
 
 	 @Query(value= "select * from producao where  id = ?", nativeQuery = true)

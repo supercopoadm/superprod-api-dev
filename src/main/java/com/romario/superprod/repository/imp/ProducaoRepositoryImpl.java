@@ -126,7 +126,7 @@ public class ProducaoRepositoryImpl implements ProducaoRepositoryQuery {
 					"%" + producaoFilter.getLoginusuario() + "%"));
 		}
 		
-		if (producaoFilter.getStatus().equals("Ativos")) {
+		if (producaoFilter.getStatus().equals("Ativo")) {
 			predicates.add(builder.equal(builder.lower(root.get("status")), false));
 			System.out.println(producaoFilter.getStatus() + " " + Boolean.getBoolean(producaoFilter.getStatus()));
 		} else {

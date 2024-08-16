@@ -19,7 +19,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.romario.superprod.domain.Operador;
 import com.romario.superprod.domain.dto.OperadorDTO;
-import com.romario.superprod.domain.dto.OperadorNewDTO;
 import com.romario.superprod.domain.dto.flat.OperadorFlat;
 import com.romario.superprod.service.OperadorService;
 
@@ -87,8 +86,6 @@ public class OperadorResource {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
     public void inativar(@RequestBody Boolean obj,@PathVariable int id)	{
 		service.status(obj,id);
-		
-
 	}
 	
 

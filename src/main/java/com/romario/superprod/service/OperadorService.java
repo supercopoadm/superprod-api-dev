@@ -2,7 +2,6 @@ package com.romario.superprod.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -12,15 +11,12 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.romario.superprod.domain.LogSistema;
-import com.romario.superprod.domain.Maquina;
 import com.romario.superprod.domain.Operador;
-import com.romario.superprod.domain.dto.flat.MaquinaFlatInsert;
 import com.romario.superprod.domain.dto.flat.OperadorFlat;
 import com.romario.superprod.repository.LogSistemaRepository;
 import com.romario.superprod.repository.OperadorRepository;
 import com.romario.superprod.service.execption.DataIntegrityException;
 import com.romario.superprod.service.execption.EntidadeNaoEncontradaExcepition;
-import com.romario.superprod.service.execption.ObjectNotFoundException;
 import com.romario.superprod.service.util.Tenantuser;
 
 @Service
@@ -114,7 +110,7 @@ public class OperadorService {
 	
 	public Operador buscarOuFalhar(int id) {
 		return repo.findById(id)
-				.orElseThrow(() -> new EntidadeNaoEncontradaExcepition(String.format("Molde não encontrada", id)));
+				.orElseThrow(() -> new EntidadeNaoEncontradaExcepition(String.format("Operador não encontrada", id)));
 	}
 	
 	@Transactional
