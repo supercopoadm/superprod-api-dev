@@ -1,6 +1,6 @@
 create table chamado 
 (id integer not null auto_increment, primary key (id))
- engine=InnoDB default charset=utf8MB4;
+engine=InnoDB default charset=utf8MB4;
 
 create table classepermissao 
 (id integer not null auto_increment, nome varchar(255), primary key (id))
@@ -31,7 +31,7 @@ create table molde_maquina
 engine=InnoDB default charset=utf8MB4;
 
 create table operador 
-(id integer not null auto_increment, nome varchar(255), status bit, numero integer tenant_id integer, primary key (id)) 
+(id integer not null auto_increment, nome varchar(255), status bit, numero integer, tenant_id integer, primary key (id)) 
 engine=InnoDB default charset=utf8MB4;
 
 create table permissao 
