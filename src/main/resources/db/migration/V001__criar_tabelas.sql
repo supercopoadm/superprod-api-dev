@@ -43,7 +43,7 @@ create table producao
 engine=InnoDB default charset=utf8MB4;
 
 create table produto 
-(id integer not null auto_increment, nome varchar(255), sku varchar(255), tenant_id integer, primary key (id)) 
+(id integer not null auto_increment, nome varchar(255), sku varchar(255),status bit, tenant_id integer, primary key (id)) 
 engine=InnoDB default charset=utf8MB4;
 
 create table tenant 
