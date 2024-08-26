@@ -19,7 +19,7 @@ create table log_sistema
 engine=InnoDB default charset=utf8MB4;
 
 create table maquina 
-(id integer not null auto_increment, nome varchar(255), numero integer, peso varchar(255), tenant_id integer, primary key (id)) 
+(id integer not null auto_increment, nome varchar(255), numero integer, peso varchar(255),status bit, tenant_id integer, primary key (id)) 
 engine=InnoDB default charset=utf8MB4;
 
 create table molde 
@@ -31,7 +31,7 @@ create table molde_maquina
 engine=InnoDB default charset=utf8MB4;
 
 create table operador 
-(id integer not null auto_increment, nome varchar(255), status bit, tenant_id integer, primary key (id)) 
+(id integer not null auto_increment, nome varchar(255), status bit, numero integer tenant_id integer, primary key (id)) 
 engine=InnoDB default charset=utf8MB4;
 
 create table permissao 
@@ -39,7 +39,7 @@ create table permissao
 engine=InnoDB default charset=utf8MB4;
 
 create table producao 
-(id integer not null auto_increment, dataprevicao datetime(6), dataproducao datetime(6), horafinal integer, horainicio integer, obs varchar(255), perda integer, piguimento varchar(255), quantidade integer, tempomaquina integer, turno varchar(255), maquina_id integer, operador_id integer, produto_id integer, tenant_id integer,  status bit, primary key (id)) 
+(id integer not null auto_increment, dataprevicao datetime(6), dataproducao datetime(6), horafinal integer, horainicio integer, obs varchar(255), perda integer, piguimento varchar(255), quantidade integer, tempomaquina integer, turno varchar(255), maquina_id integer, operador_id integer, produto_id integer, tenant_id integer,  status bit, cor varchar(255), dataprevisao datetime(6), primary key (id)) 
 engine=InnoDB default charset=utf8MB4;
 
 create table produto 
