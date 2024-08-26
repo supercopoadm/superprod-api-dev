@@ -35,8 +35,8 @@ public class OperadorService {
 	private LogSistemaService log;
 
 	public List<OperadorFlat> findAllSql() {
+		List<OperadorFlat> operadorFlat = new ArrayList<OperadorFlat>();
 		List<Operador> operadores = repo.findAllSql(tenantUsuario.buscarOuFalharInt());
-		List<OperadorFlat> operadorFlat = new ArrayList<>();
 		for (Operador obj : operadores) {
 			OperadorFlat opeFlat = new OperadorFlat(obj);
 			operadorFlat.add(opeFlat);
@@ -55,8 +55,18 @@ public class OperadorService {
 		List<OperadorFlat> operadorFlat = new ArrayList<OperadorFlat>();
 		List<Operador> operadores = repo.findAllSqlInativo(tenantUsuario.buscarOuFalharInt());
 		for (Operador ope : operadores) {
-			OperadorFlat molFlat = new OperadorFlat(ope);
-			operadorFlat.add(molFlat);
+			OperadorFlat opeFlat = new OperadorFlat(ope);
+			operadorFlat.add(opeFlat);
+		}
+		return operadorFlat;
+	}
+	
+	public List<OperadorFlat> findAllSqlAtivo() {
+		List<OperadorFlat> operadorFlat = new ArrayList<OperadorFlat>();
+		List<Operador> operadores = repo.findAllSqlAtivo(tenantUsuario.buscarOuFalharInt());
+		for (Operador ope : operadores) {
+			OperadorFlat opeFlat = new OperadorFlat(ope);
+			operadorFlat.add(opeFlat);
 		}
 		return operadorFlat;
 	}
@@ -110,7 +120,7 @@ public class OperadorService {
 	
 	public Operador buscarOuFalhar(int id) {
 		return repo.findById(id)
-				.orElseThrow(() -> new EntidadeNaoEncontradaExcepition(String.format("Operador não encontrada", id)));
+				.orElseThrow(() -> new EntidadeNaoEncontradaExcepition(String.format("Operador não encontrado", id)));
 	}
 	
 	@Transactional

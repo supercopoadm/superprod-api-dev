@@ -45,7 +45,7 @@ public class UsuarioResource {
 	//@CheckSecurity.Usuario.PodeConsultar
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<UsuarioFlat>> findAll() {
-		List<UsuarioFlat> list = service.findAllSQL();
+		List<UsuarioFlat> list = service.findAllSql();
 		return ResponseEntity.ok().body(list);
 	}
 	
@@ -56,6 +56,14 @@ public class UsuarioResource {
 		List<UsuarioFlat> list = service.findAllSqlInativo();
 		return ResponseEntity.ok().body(list);
 	}
+	
+	//@CheckSecurity.Usuario.PodeConsultar
+		@RequestMapping(value = "/ativos", method = RequestMethod.GET)
+		public ResponseEntity<List<UsuarioFlat>> findAllAtivo() {
+		//	List<UsuarioDTO> list = service.findAll();
+			List<UsuarioFlat> list = service.findAllSqlAtivo();
+			return ResponseEntity.ok().body(list);
+		}
 	
 	//@CheckSecurity.Usuario.PodeConsultar
 	@RequestMapping(value = "/page", method = RequestMethod.GET)

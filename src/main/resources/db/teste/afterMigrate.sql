@@ -82,9 +82,9 @@ INSERT INTO permissao  VALUES (35 ,'R_OPE', NULL);
 INSERT INTO permissao  VALUES (36 ,'S_OPE', NULL);
 
 
-INSERT INTO tenant  VALUES (1 ,'GASOT E MARQUES SERVICO DE RADIOLOGIA LTDA');
+INSERT INTO tenant  VALUES (1 ,'INJEXPROD SERVIÇOS DE INJEÇÃO PLASTICA LTDA ME');
 
-INSERT INTO usuario  VALUES (1 ,0, 'RRIBEIRO', 'ROMARIO RIBEIRO', '$2a$10$ihfCkl04DbK.2KEsji5SXO7.hHlEe4kCAMoxq.No48GrYpTtH/3.O', 1, 1, 1);
+INSERT INTO usuario  VALUES (1 ,0, 'LPASTUCH', 'LORENZO PASTUCH', '$2a$10$ihfCkl04DbK.2KEsji5SXO7.hHlEe4kCAMoxq.No48GrYpTtH/3.O', 1, 1, 1);
 INSERT INTO usuario  VALUES (3, 1, 'CONTROLE', 'CONTROLE', 1, 0, 1, 1);
 
 
@@ -96,7 +96,7 @@ INSERT INTO usuario_permissao VALUES
 
 
 INSERT INTO empresa (id, cidade, razaosocial, cpfoucnpj, naturezapessoa, uf, cep, logradouro, numero, bairro, whats, tenant_id,status, editar) 
-VALUES (1, 'ARAPONGAS', 'GASOT E MARQUES SERVICO DE RADIOLOGIA LTDA', '35502138000173', 'JURIDICA', 'PR', '86703530', 'PEPIRA DE CRISTA AMARELA', '81', 'VILA COELHO', '(43)9841-18809', 1, 1, 1);
+VALUES (1, 'SABÁUDIA', 'INJEXPROD SERVIÇOS DE INJEÇÃO PLASTICA LTDA ME', '480972140001543', 'JURIDICA', 'PR', '86720000', 'RICARDO DE ABREU ', '317', 'ARAMBUL', '(43)9986-73474', 1, 1, 1);
 
 INSERT INTO usuario_empresa (id_usuario, id_empresa, empresapadrao, tenant_id) VALUES (1, 1, 1, 1);
 

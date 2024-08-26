@@ -49,7 +49,7 @@ public class ProdutoService {
 	
 	public Produto buscarOuFalhar(int id) {
 		return repo.findById(id)
-				.orElseThrow(() -> new EntidadeNaoEncontradaExcepition(String.format("Produto não encontrada", id)));
+				.orElseThrow(() -> new EntidadeNaoEncontradaExcepition(String.format("Produto não encontrado", id)));
 	}
 	
 	

@@ -23,6 +23,7 @@ import com.romario.superprod.domain.Molde;
 import com.romario.superprod.domain.dto.MoldeDTO;
 import com.romario.superprod.domain.dto.flat.MoldeFlat;
 import com.romario.superprod.domain.dto.flat.MoldeMaquinaFlatInsert;
+import com.romario.superprod.domain.dto.flat.UsuarioFlat;
 import com.romario.superprod.repository.MoldeRepository;
 import com.romario.superprod.repository.filter.MoldeFilter;
 import com.romario.superprod.service.MoldeService;
@@ -44,10 +45,9 @@ public class MoldeResource {
 //	private RelAtendimento relservice;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<?> findAll() {
+	public ResponseEntity<List<MoldeFlat>> findAll() {
 		List<MoldeFlat> list = service.findAllSql();
-		
-		return ResponseEntity.ok(list);
+		return ResponseEntity.ok().body(list);
 	}
 	
 //	@RequestMapping(method = RequestMethod.GET)
@@ -74,6 +74,12 @@ public class MoldeResource {
 	@RequestMapping(value = "/inativos", method = RequestMethod.GET)
 	public ResponseEntity<List<MoldeFlat>> findAllInativo() {
 		List<MoldeFlat> list = service.findAllSqlInativo();
+		return ResponseEntity.ok().body(list);
+	}
+	
+	@RequestMapping(value = "/ativos", method = RequestMethod.GET)
+	public ResponseEntity<List<MoldeFlat>> findAllAtivo() {
+		List<MoldeFlat> list = service.findAllSqlAtivo();
 		return ResponseEntity.ok().body(list);
 	}
 	

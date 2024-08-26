@@ -54,7 +54,17 @@ public class FuncionarioService {
 	
 	public List<FuncionarioFlat> findAllSqlInativo() {
 		List<FuncionarioFlat> funcionarioFlat = new ArrayList<FuncionarioFlat>();
-		List<Funcionario> funcionarios = funRepository.findAllSqlInativo(tenantUsuario.buscarOuFalharInt());
+		List<Funcionario> funcionarios = funRepository.findAllSqlInativo();
+		for (Funcionario fun : funcionarios) {
+			FuncionarioFlat funFlat = new FuncionarioFlat(fun);
+			funcionarioFlat.add(funFlat);
+		}
+		return funcionarioFlat;
+	}
+	
+	public List<FuncionarioFlat> findAllSqlAtivo() {
+		List<FuncionarioFlat> funcionarioFlat = new ArrayList<FuncionarioFlat>();
+		List<Funcionario> funcionarios = funRepository.findAllSqlAtivo();
 		for (Funcionario fun : funcionarios) {
 			FuncionarioFlat funFlat = new FuncionarioFlat(fun);
 			funcionarioFlat.add(funFlat);

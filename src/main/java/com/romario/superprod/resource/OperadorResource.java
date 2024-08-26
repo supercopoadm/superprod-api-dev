@@ -34,10 +34,9 @@ public class OperadorResource {
 	
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<?> findAll() {
+	public ResponseEntity<?> findAllSql() {
 		List<OperadorFlat> list = service.findAllSql();
-		
-		return ResponseEntity.ok(list);
+		return ResponseEntity.ok().body(list);
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -50,6 +49,12 @@ public class OperadorResource {
 	@RequestMapping(value = "/inativos", method = RequestMethod.GET)
 	public ResponseEntity<List<OperadorFlat>> findAllInativo() {
 		List<OperadorFlat> list = service.findAllSqlInativo();
+		return ResponseEntity.ok().body(list);
+	}
+	
+	@RequestMapping(value = "/ativos", method = RequestMethod.GET)
+	public ResponseEntity<List<OperadorFlat>> findAllAtivo() {
+		List<OperadorFlat> list = service.findAllSqlAtivo();
 		return ResponseEntity.ok().body(list);
 	}
 	

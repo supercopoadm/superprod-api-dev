@@ -27,9 +27,11 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 	@Query(value = "select * from usuario", nativeQuery = true)
 	List<Usuario> findAllSql();	
 	
-
 	@Query(value = "select * from usuario where status=0 and id !=3 and id !=1 and tenant_id = ?", nativeQuery = true)
 	List<Usuario> findAllSqlInativo(int id);
+	
+	@Query(value = "select * from usuario where status=1 and id !=3 and tenant_id = ?", nativeQuery = true)
+	List<Usuario> findAllSqlAtivo(int id);
 	
 	@Modifying
 	@Transactional

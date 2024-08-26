@@ -126,13 +126,13 @@ public class ProducaoRepositoryImpl implements ProducaoRepositoryQuery {
 					"%" + producaoFilter.getLoginusuario() + "%"));
 		}
 		
-		if (producaoFilter.getStatus().equals("Ativo")) {
-			predicates.add(builder.equal(builder.lower(root.get("status")), false));
-			System.out.println(producaoFilter.getStatus() + " " + Boolean.getBoolean(producaoFilter.getStatus()));
-		} else {
-			predicates.add(builder.equal(builder.lower(root.get("status")), true));
-			System.out.println(producaoFilter.getStatus()  + " " + Boolean.getBoolean(producaoFilter.getStatus()));
-		}
+//		if (producaoFilter.getStatus().equals("Ativo")) {
+//			predicates.add(builder.equal(builder.lower(root.get("status")), false));
+//			System.out.println(producaoFilter.getStatus() + " " + Boolean.getBoolean(producaoFilter.getStatus()));
+//		} else {
+//			predicates.add(builder.equal(builder.lower(root.get("status")), true));
+//			System.out.println(producaoFilter.getStatus()  + " " + Boolean.getBoolean(producaoFilter.getStatus()));
+//		}
 		
 		
 		return predicates.toArray(new Predicate[predicates.size()]);

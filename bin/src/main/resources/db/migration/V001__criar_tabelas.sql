@@ -15,7 +15,7 @@ create table empresa
 engine=InnoDB default charset=utf8MB4;
 
 create table log_sistema 
-(id integer not null auto_increment, comando varchar(255), datagravacao datetime, loginusuario varchar(255), status bit, chamado_id integer not null, empresa_id integer not null, maquina_id integer not null, molde_id integer not null, operador_id integer not null, producao_id integer not null, produto_id integer not null, tenant_id integer, usuario_id integer not null, primary key (id))
+(id integer not null auto_increment, comando varchar(10000), datagravacao datetime, loginusuario varchar(255), status bit, chamado_id integer null, empresa_id integer null, maquina_id integer null, molde_id integer null, operador_id integer null, producao_id integer null, produto_id integer null, tenant_id integer null, usuario_id integer, primary key (id))
 engine=InnoDB default charset=utf8MB4;
 
 create table maquina 

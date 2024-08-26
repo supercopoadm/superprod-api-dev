@@ -68,7 +68,7 @@ public class UsuarioService {
 	}
 	
 	public UsuarioDTO findF(Integer id) {
-		System.out.println("Usuairo do token");
+		System.out.println("Usuario do token");
 		System.out.println(usutoken.getUsu().getNome());
 		Usuario usu = repo.findPorId(id);
 		usu.setSenha(null);
@@ -276,7 +276,7 @@ public class UsuarioService {
 	}
 	
 
-	public List<UsuarioFlat> findAllSQL() {
+	public List<UsuarioFlat> findAllSql() {
 		List<UsuarioFlat>ususFlat = new ArrayList<UsuarioFlat>();
 		List<Usuario>usuFlat = repo.findAllSql();
 		for(Usuario usu :usuFlat ) {
@@ -291,6 +291,18 @@ public class UsuarioService {
 		
 		List<UsuarioFlat>ususFlat = new ArrayList<UsuarioFlat>();
 		List<Usuario>usuFlat = repo.findAllSqlInativo(tenantUsuario.buscarOuFalharInt());
+		for(Usuario usu :usuFlat ) {
+			UsuarioFlat usuflat = new UsuarioFlat(usu);
+			ususFlat.add(usuflat);
+		}
+		
+		return ususFlat;
+	}
+	
+	public List<UsuarioFlat> findAllSqlAtivo() {
+		
+		List<UsuarioFlat>ususFlat = new ArrayList<UsuarioFlat>();
+		List<Usuario>usuFlat = repo.findAllSqlAtivo(tenantUsuario.buscarOuFalharInt());
 		for(Usuario usu :usuFlat ) {
 			UsuarioFlat usuflat = new UsuarioFlat(usu);
 			ususFlat.add(usuflat);

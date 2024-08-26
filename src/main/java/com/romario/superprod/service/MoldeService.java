@@ -20,10 +20,12 @@ import com.romario.superprod.domain.MoldeMaquina;
 import com.romario.superprod.domain.Operador;
 import com.romario.superprod.domain.Producao;
 import com.romario.superprod.domain.Produto;
+import com.romario.superprod.domain.Usuario;
 import com.romario.superprod.domain.dto.flat.MoldeFlat;
 import com.romario.superprod.domain.dto.flat.MoldeMaquinaFlatInsert;
 import com.romario.superprod.domain.dto.flat.OperadorFlat;
 import com.romario.superprod.domain.dto.flat.ProducaoFlat;
+import com.romario.superprod.domain.dto.flat.UsuarioFlat;
 import com.romario.superprod.repository.LogSistemaRepository;
 import com.romario.superprod.repository.MaquinaRepository;
 import com.romario.superprod.repository.MoldeRepository;
@@ -63,20 +65,14 @@ public class MoldeService {
 	
 	
 	public List<MoldeFlat> findAllSql() {
-	    List<Molde> moldes = repo.findAllSql(tenantUsuario.buscarOuFalharInt());
-	    List<MoldeFlat> moldeFlat = new ArrayList<>();
-	    for (Molde obj : moldes) {
-	        // Verifique o valor da data antes da conversão
-	        System.out.println("Data original: " + obj.getLogs().getDatagravacao());
-	        
-	        MoldeFlat opeFlat = new MoldeFlat(obj);
-	        
-	        // Verifique o valor da data após a conversão
-	        System.out.println("Data convertida: " + opeFlat.getDatagravacao());
-	        
-	        moldeFlat.add(opeFlat);
-	    }
-	    return moldeFlat;
+	    List<MoldeFlat> moldesFlat = new ArrayList<>();
+	    List<Molde>moldeFlat = repo.findAllSql();
+		for(Molde mol :moldeFlat ) {
+			MoldeFlat usuflat = new MoldeFlat(mol);
+			moldesFlat.add(usuflat);
+		}
+		
+		return moldesFlat;
 	}
 
 
@@ -90,6 +86,17 @@ public class MoldeService {
 	public List<MoldeFlat> findAllSqlInativo() {
 		List<MoldeFlat> moldeFlat = new ArrayList<MoldeFlat>();
 		List<Molde> moldes = repo.findAllSqlInativo(tenantUsuario.buscarOuFalharInt());
+		for (Molde mol : moldes ) {
+			MoldeFlat molFlat = new MoldeFlat(mol);  
+			moldeFlat.add(molFlat);
+		}
+		return moldeFlat;
+
+	}
+	
+	public List<MoldeFlat> findAllSqlAtivo() {
+		List<MoldeFlat> moldeFlat = new ArrayList<MoldeFlat>();
+		List<Molde> moldes = repo.findAllSqlAtivo(tenantUsuario.buscarOuFalharInt());
 		for (Molde mol : moldes ) {
 			MoldeFlat molFlat = new MoldeFlat(mol);  
 			moldeFlat.add(molFlat);

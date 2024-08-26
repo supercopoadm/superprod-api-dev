@@ -17,6 +17,9 @@ public interface OperadorRepository extends JpaRepository<Operador, Integer>{
 	@Query(value = "select * from operador where status=0 and tenant_id = ?", nativeQuery = true)
 	List<Operador> findAllSqlInativo(Integer buscarOuFalharInt);
 	
+	@Query(value = "select * from operador where status=1 and tenant_id = ?", nativeQuery = true)
+	List<Operador> findAllSqlAtivo(Integer buscarOuFalharInt);
+	
 	Operador findByNumero(Integer numero);
 	
 	

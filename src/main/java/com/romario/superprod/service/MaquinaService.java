@@ -77,6 +77,16 @@ public class MaquinaService {
 		}
 		return examesflat;
 	}
+	
+	public List<MaquinaFlatInsert> findAllSqlAtivo() {
+		List<Maquina> exames = repo.findAllSqlAtivo();
+		List<MaquinaFlatInsert> examesflat = new ArrayList<>();
+		for (Maquina obj : exames) {
+			MaquinaFlatInsert exameflat = new MaquinaFlatInsert(obj);
+			examesflat.add(exameflat);
+		}
+		return examesflat;
+	}
 
 	public void delete(Integer id) {
 		find(id);

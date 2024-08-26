@@ -17,6 +17,9 @@ public interface MoldeRepository extends JpaRepository<Molde, Integer>, MoldeRep
 
 	@Query(value = "select * from molde where status=0 and tenant_id = ?", nativeQuery = true)
 	List<Molde> findAllSqlInativo(int id);
+	
+	@Query(value = "select * from molde where status=1 and tenant_id = ?", nativeQuery = true)
+	List<Molde> findAllSqlAtivo(int id);
 
 	@Query(value = "select c.* from molde m, molde_maquina e\r\n"
 			+ "where m.id = e.molde_id and e.maquina_id = ?", nativeQuery = true)

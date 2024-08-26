@@ -37,10 +37,10 @@ public class FuncionarioResource {
 	private ModelMapper modelMapper;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<?> findAll() {
+	public ResponseEntity<?> findAllSql() {
 		List<FuncionarioFlat> list = funcionarioService.findAllSql();
 		
-		return ResponseEntity.ok(list);
+		return ResponseEntity.ok().body(list);
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -53,6 +53,12 @@ public class FuncionarioResource {
 	@RequestMapping(value = "/inativos", method = RequestMethod.GET)
 	public ResponseEntity<List<FuncionarioFlat>> findAllInativo() {
 		List<FuncionarioFlat> list = funcionarioService.findAllSqlInativo();
+		return ResponseEntity.ok().body(list);
+	}
+	
+	@RequestMapping(value = "/ativos", method = RequestMethod.GET)
+	public ResponseEntity<List<FuncionarioFlat>> findAllAtivo() {
+		List<FuncionarioFlat> list = funcionarioService.findAllSqlAtivo();
 		return ResponseEntity.ok().body(list);
 	}
 	

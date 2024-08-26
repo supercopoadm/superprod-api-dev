@@ -18,11 +18,14 @@ public interface MaquinaRepository extends JpaRepository<Maquina, Integer> {
 	@Query(value = "select * from maquina where id = ?", nativeQuery = true)
 	Maquina findPorId(Integer id);
 
-	@Query(value = "select * from maquina where status=1 and tenant_id = ?", nativeQuery = true)
+	@Query(value = "select * from maquina", nativeQuery = true)
 	List<Maquina> findAllSql(Integer idtenant);
 
 	@Query(value = "select * from maquina where status=0", nativeQuery = true)
 	List<Maquina> findAllSqlInativo();
+	
+	@Query(value = "select * from maquina where status=1", nativeQuery = true)
+	List<Maquina> findAllSqlAtivo();
 	
 	
 	@Query(value= "select * from maquina where status=1 and numero = ?", nativeQuery = true)
