@@ -20,7 +20,7 @@ public interface ProdutoRepository extends JpaRepository<Produto, Integer>{
 	List<Produto> findAllSqlInativo(int id);
 	
 	@Query(value = "select * from produto where status=1 and tenant_id = ? ", nativeQuery = true)
-	List<Produto> findAllSQl(Integer idproduto);
+	List<Produto> findAllSqlAtivo(Integer idproduto);
 	
 	@Query(value= "select * from produto where tenant_id = ?", nativeQuery = true)
 	List<Produto> produto(Integer tenant);

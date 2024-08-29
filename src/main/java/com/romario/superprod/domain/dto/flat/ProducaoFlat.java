@@ -22,7 +22,7 @@ public class ProducaoFlat {
 	private OffsetDateTime dataproducao;
 	private String horainicio;
 	private String horafinal;
-	private String turno;
+	private String lote;
 	private Operador operador;
 	private Integer idoperador;
 	private String nomeOperador;
@@ -47,7 +47,7 @@ public class ProducaoFlat {
 	}
 
 	public ProducaoFlat(Integer id, String obs, Date dataprevisao, Integer quantidade, String cor, Integer perda,
-			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String turno,
+			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String lote,
 			Operador operador, Integer idoperador, String nomeOperador, Maquina maquina, Integer idmaquina,
 			Integer nomeMaquina, Produto produto, Integer idprouto, String nomeProduto, Funcionario funcionario,
 			Integer idfuncionario, String nomefuncionario, Atributo atributo, Integer idatributo, String nomeatributo,
@@ -62,7 +62,7 @@ public class ProducaoFlat {
 		this.dataproducao = dataproducao;
 		this.horainicio = horainicio;
 		this.horafinal = horafinal;
-		this.turno = turno;
+		this.lote = lote;
 		this.operador = operador;
 		this.idoperador = idoperador;
 		this.nomeOperador = nomeOperador;
@@ -94,7 +94,7 @@ public class ProducaoFlat {
 		this.dataproducao = obj.getDataproducao();
 		this.horainicio = obj.getHorainicio();
 		this.horafinal = obj.getHorafinal();
-		this.turno = obj.getTurno();
+		this.lote = obj.getLote();
 		this.operador = obj.getOperador();
 		this.nomeOperador = obj.getOperador().getNome();
 		this.nomeProduto = obj.getProduto().getNome();
@@ -130,7 +130,7 @@ public class ProducaoFlat {
 		this.dataproducao = obj.getDataproducao();
 		this.horainicio = obj.getHorainicio();
 		this.horafinal = obj.getHorafinal();
-		this.turno = obj.getTurno();
+		this.lote = obj.getLote();
 		// this.operadorID = obj.getOperador();
 		this.nomeOperador = obj.getOperador().getNome();
 		this.nomeProduto = obj.getProduto().getNome();
@@ -224,12 +224,12 @@ public class ProducaoFlat {
 		this.horafinal = horafinal;
 	}
 
-	public String getTurno() {
-		return turno;
+	public String getLote() {
+		return lote;
 	}
 
-	public void setTurno(String turno) {
-		this.turno = turno;
+	public void setLote(String lote) {
+		this.lote = lote;
 	}
 
 	public OffsetDateTime getDatagravacao() {
@@ -375,5 +375,6 @@ public class ProducaoFlat {
 	public void setNomeatributo(String nomeatributo) {
 		this.nomeatributo = nomeatributo;
 	}
+
 
 }

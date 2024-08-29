@@ -12,15 +12,15 @@ import com.romario.superprod.domain.Atributo;
 public interface AtributoRepository extends JpaRepository<Atributo, Integer>{
 	
 	@Query(value = "select * from atributo", nativeQuery = true)
-	List<Atributo> findAllSQL();
+	List<Atributo> findAllSql();
 
 	@Query(value = "select * from atributo where status = 1 and tenant_id = ? ", nativeQuery = true)
-	List<Atributo> findAllSql(Integer buscarOuFalharInt);
-
+	List<Atributo> findAllSqlAtivo(Integer buscarOuFalharInt);
+	
 	@Query(value = "select * from atributo where id = ? ", nativeQuery = true)
 	Atributo findByPorId(Integer id);
 
-	@Query(value = "select * from atributo where status = 1 and tenant_id = ? ", nativeQuery = true)
+	@Query(value = "select * from atributo where status = 0 and tenant_id = ? ", nativeQuery = true)
 	List<Atributo> findAllSqlInativo(Integer buscarOuFalharInt);
 
 }

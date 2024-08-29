@@ -52,7 +52,13 @@ public class ProdutoResource {
 		List<ProdutoFlat> list = service.findAllSqlInativo();
 		return ResponseEntity.ok().body(list);
 	}
-
+	
+	@RequestMapping(value = "/ativos", method = RequestMethod.GET)
+	public ResponseEntity<List<ProdutoFlat>> findAllAtivo() {
+		List<ProdutoFlat> list = service.findAllSqlAtivo();
+		return ResponseEntity.ok().body(list);
+	}
+	
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Produto> insert(@Valid @RequestBody ProdutoFlat obj) {
 		Produto novoobj = modelMapper.map(obj, Produto.class);

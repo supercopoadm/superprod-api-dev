@@ -22,7 +22,7 @@ public class ProducaoFilter {
 	private Date dataproducaoate;
 	private String horainicio;
 	private String horafinal;
-	private String turno;
+	private String lote;
 	private String status;
 	private String operador;
 	private String maquina;
@@ -30,6 +30,7 @@ public class ProducaoFilter {
 	private String nome;
 	private String numero;
 	private String loginusuario;
+	private String atributo;
 
 	public String getId() {
 		return id;
@@ -37,6 +38,14 @@ public class ProducaoFilter {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+	
+	public String getAtributo() {
+		return atributo;
+	}
+
+	public void setAtributo(String atributo) {
+		this.atributo = atributo;
 	}
 
 	public String getObs() {
@@ -97,12 +106,12 @@ public class ProducaoFilter {
 		this.horafinal = horafinal;
 	}
 
-	public String getTurno() {
-		return turno;
+	public String getLote() {
+		return lote;
 	}
 
-	public void setTurno(String turno) {
-		this.turno = turno;
+	public void setLote(String lote) {
+		this.lote = lote;
 	}
 
 	public String getStatus() {

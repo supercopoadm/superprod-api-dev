@@ -38,7 +38,7 @@ public class ProdutoService {
 
 	public List<ProdutoFlat> findAllSQL() {
 
-		List<Produto> produtos = repo.findAllSQl(tenantUsuario.buscarOuFalharInt());
+		List<Produto> produtos = repo.findAllSQl();
 		List<ProdutoFlat> produtoFlat = new ArrayList<>();
 		for (Produto obj : produtos) {
 			ProdutoFlat prodFalt = new ProdutoFlat(obj);
@@ -62,6 +62,17 @@ public class ProdutoService {
 	public List<ProdutoFlat> findAllSqlInativo() {
 		List<ProdutoFlat> prodFlat = new ArrayList<ProdutoFlat>();
 		List<Produto> produto = repo.findAllSqlInativo(tenantUsuario.buscarOuFalharInt());
+		for (Produto prod : produto) {
+			ProdutoFlat molFlat = new ProdutoFlat(prod);
+			prodFlat.add(molFlat);
+		}
+		return prodFlat;
+
+	}
+	
+	public List<ProdutoFlat> findAllSqlAtivo() {
+		List<ProdutoFlat> prodFlat = new ArrayList<ProdutoFlat>();
+		List<Produto> produto = repo.findAllSqlAtivo(tenantUsuario.buscarOuFalharInt());
 		for (Produto prod : produto) {
 			ProdutoFlat molFlat = new ProdutoFlat(prod);
 			prodFlat.add(molFlat);

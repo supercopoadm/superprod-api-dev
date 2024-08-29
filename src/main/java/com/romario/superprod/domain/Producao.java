@@ -34,7 +34,7 @@ public class Producao {
 	private OffsetDateTime dataproducao;
 	private String horainicio;
 	private String horafinal;
-	private String turno;
+	private String lote;
 	private Boolean status = Boolean.TRUE;
 	@ManyToOne
 	private Operador operador;
@@ -62,7 +62,7 @@ public class Producao {
 	}
 
 	public Producao(Integer id, String obs, Date dataprevisao, Integer quantidade, String cor, Integer perda,
-			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String turno,
+			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String lote,
 			Boolean status, Operador operador, Tenant tenant, Maquina maquina, Produto produto, List<LogSistema> logs, Funcionario funcionario,
 			Atributo atributo) {
 		this.id = id;
@@ -75,7 +75,7 @@ public class Producao {
 		this.dataproducao = dataproducao;
 		this.horainicio = horainicio;
 		this.horafinal = horafinal;
-		this.turno = turno;
+		this.lote = lote;
 		this.status = status;
 		this.operador = operador;
 		this.tenant = tenant;
@@ -97,7 +97,7 @@ public class Producao {
 		this.dataproducao = obj.getDataproducao();
 		this.horainicio = obj.getHorainicio();
 		this.horafinal = obj.getHorafinal();
-		this.turno = obj.getTurno();
+		this.lote = obj.getLote();
 		this.status = obj.getStatus();
 	}
 
@@ -112,7 +112,7 @@ public class Producao {
 		this.dataproducao = obj.getDataproducao();
 		this.horainicio = obj.getHorainicio();
 		this.horafinal = obj.getHorafinal();
-		this.turno = obj.getTurno();
+		this.lote = obj.getLote();
 		this.status = obj.getStatus();
 		this.maquina = obj.getMaquina();
 		this.operador = obj.getOperador();
@@ -132,7 +132,7 @@ public class Producao {
 		this.dataproducao = obj.getDataproducao();
 		this.horainicio = obj.getHorainicio();
 		this.horafinal = obj.getHorafinal();
-		this.turno = obj.getTurno();
+		this.lote = obj.getLote();
 		this.status = obj.getStatus();
 		this.maquina = obj.getMaquina();
 		this.operador = obj.getOperador();
@@ -221,12 +221,12 @@ public class Producao {
 		this.horafinal = horafinal;
 	}
 
-	public String getTurno() {
-		return turno;
+	public String getLote() {
+		return lote;
 	}
 
-	public void setTurno(String turno) {
-		this.turno = turno;
+	public void setLote(String lote) {
+		this.lote = lote;
 	}
 
 	public Operador getOperador() {

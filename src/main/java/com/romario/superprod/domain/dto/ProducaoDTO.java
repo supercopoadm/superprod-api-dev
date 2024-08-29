@@ -21,7 +21,7 @@ public class ProducaoDTO {
 	private OffsetDateTime dataproducao;
 	private String horainicio;
 	private String horafinal;
-	private String turno;
+	private String lote;
 	private Boolean status = Boolean.TRUE;
 	private Operador operador;
 	private Integer idoperador;
@@ -43,7 +43,7 @@ public class ProducaoDTO {
 	}
 
 	public ProducaoDTO(Integer id, String obs, Date dataprevisao, Integer quantidade, String cor, Integer perda,
-			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String turno,
+			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String lote,
 			Boolean status, Operador operador, Integer idoperador, String nomeoperador, Maquina maquina,
 			Integer idmaquina, Integer nomemaquina, Produto produto, Integer idproduto, String nomeproduto,
 			Funcionario funcionario, Integer idfuncionario, String nomefuncionario, Atributo atributo,
@@ -59,7 +59,7 @@ public class ProducaoDTO {
 		this.dataproducao = dataproducao;
 		this.horainicio = horainicio;
 		this.horafinal = horafinal;
-		this.turno = turno;
+		this.lote = lote;
 		this.status = status;
 		this.operador = operador;
 		this.idoperador = idoperador;
@@ -158,12 +158,12 @@ public class ProducaoDTO {
 		this.horafinal = horafinal;
 	}
 
-	public String getTurno() {
-		return turno;
+	public String getLote() {
+		return lote;
 	}
 
-	public void setTurno(String turno) {
-		this.turno = turno;
+	public void setLote(String lote) {
+		this.lote = lote;
 	}
 
 	public Boolean getStatus() {
@@ -257,7 +257,7 @@ public class ProducaoDTO {
 		this.dataproducao = obj.getDataproducao();
 		this.horainicio = obj.getHorainicio();
 		this.horafinal = obj.getHorafinal();
-		this.turno = obj.getTurno();
+		this.lote = obj.getLote();
 		this.status = obj.getStatus();
 		this.maquina = obj.getMaquina();
 		this.idmaquina = obj.maquina.getId();

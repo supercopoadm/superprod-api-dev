@@ -8,7 +8,7 @@ create table molde (id integer not null auto_increment, nome varchar(255), sku v
 create table molde_maquina (status bit, molde_id integer not null, maquina_id integer not null,  primary key (maquina_id, molde_id)) engine=InnoDB;
 create table operador (id integer not null auto_increment, nome varchar(255), status bit, tenant_id integer, primary key (id)) engine=InnoDB;
 create table permissao (id integer not null auto_increment, descricao varchar(255), classepermissao_id integer, primary key (id)) engine=InnoDB;
-create table producao (id integer not null auto_increment, dataprevicao datetime(6), dataproducao datetime(6), horafinal integer, horainicio integer, obs varchar(255), perda integer, piguimento varchar(255), quantidade integer, tempomaquina integer, turno varchar(255), maquina_id integer, operador_id integer, produto_id integer, tenant_id integer, primary key (id)) engine=InnoDB;
+create table producao (id integer not null auto_increment, dataprevicao datetime(6), dataproducao datetime(6), horafinal integer, horainicio integer, obs varchar(255), perda integer, piguimento varchar(255), quantidade integer, tempomaquina integer, lote varchar(255), maquina_id integer, operador_id integer, produto_id integer, tenant_id integer, primary key (id)) engine=InnoDB;
 create table produto (id integer not null auto_increment, nome varchar(255), sku varchar(255), tenant_id integer, primary key (id)) engine=InnoDB;
 create table tenant (id integer not null auto_increment, descricao varchar(255), primary key (id)) engine=InnoDB;
 create table usuario (id integer not null auto_increment, gtenantativo integer, login varchar(255), nome varchar(255), senha varchar(255), status bit, tenantativo integer, primary key (id)) engine=InnoDB;

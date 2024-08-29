@@ -53,6 +53,12 @@ public class AtributoResource {
 		return ResponseEntity.ok().body(list);
 	}
 	
+	@RequestMapping(value = "/ativos", method = RequestMethod.GET)
+	public ResponseEntity<List<AtributoFlat>> findAllSqlAtivo() {
+		List<AtributoFlat> list = atributoService.findAllSqlAtivo();
+		return ResponseEntity.ok().body(list);
+	}
+	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> delete(@PathVariable Integer id) {
 		atributoService.delete(id);

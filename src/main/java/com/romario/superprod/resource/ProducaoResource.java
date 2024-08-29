@@ -78,6 +78,12 @@ public class ProducaoResource {
 		return ResponseEntity.ok().body(list);
 	}
 	
+	@RequestMapping(value = "/ativos", method = RequestMethod.GET)
+	public ResponseEntity<List<ProducaoFlat>> findAllAtivo() {
+		List<ProducaoFlat> list = service.findAllSqlAtivo();
+		return ResponseEntity.ok().body(list);
+	}
+	
 	
 	@RequestMapping(value = "/relatorios/maquina", method = RequestMethod.GET)
 	public ResponseEntity<byte[]> maquina() throws Exception {

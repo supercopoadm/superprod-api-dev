@@ -75,6 +75,17 @@ public class ProducaoService {
 		return prodFlat;
 
 	}
+	
+	public List<ProducaoFlat> findAllSqlAtivo() {
+		List<ProducaoFlat> prodFlat = new ArrayList<ProducaoFlat>();
+		List<Producao> prods = repo.findAllSqlAtivo(tenantUsuario.buscarOuFalharInt());
+		for (Producao prod : prods) {
+			ProducaoFlat convFlat = new ProducaoFlat(prod);
+			prodFlat.add(convFlat);
+		}
+		return prodFlat;
+
+	}
 
 	public void delete(Integer id) {
 		find(id);
@@ -129,7 +140,7 @@ public class ProducaoService {
 		producao.setQuantidade(novoObj.getQuantidade());
 		producao.setStatus(true);
 		producao.setTempomaquina(novoObj.getTempomaquina());
-		producao.setTurno(novoObj.getTurno());
+		producao.setLote(novoObj.getLote());
 		repo.save(producao);
 		logProducao(producao, "inserir");
 		return novoObj;
@@ -148,7 +159,7 @@ public class ProducaoService {
 	
 	public Producao buscarOuFalhar(Integer id) {
 		return repo.findById(id)
-				.orElseThrow(() -> new EntidadeNaoEncontradaExcepition(String.format("Producao não encontrada", id)));
+				.orElseThrow(() -> new EntidadeNaoEncontradaExcepition(String.format("Produção não encontrada", id)));
 	}
 	
 	

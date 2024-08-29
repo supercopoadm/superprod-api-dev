@@ -18,7 +18,7 @@ public class ProducaoRel {
 	private Integer tempomaquina;
 	private String horainicio;
 	private String horafinal;
-	private String turno;
+	private String lote;
 	private String status;
 	private Integer numero;
 	private String nome;
@@ -32,7 +32,7 @@ public class ProducaoRel {
 
 	public ProducaoRel(Integer id, String obs, Date dataprevisao, OffsetDateTime dataproducao, Integer quantidade,
 			String piguimento, String cor, Integer perda, Integer tempomaquina, String horainicio, String horafinal,
-			String turno, String status, Integer numero, String nome, Integer maquina_id, Integer produto_id,
+			String lote, String status, Integer numero, String nome, Integer maquina_id, Integer produto_id,
 			Integer operador_id, Integer tenant_id) {
 		this.id = id;
 		this.obs = obs;
@@ -45,7 +45,7 @@ public class ProducaoRel {
 		this.tempomaquina = tempomaquina;
 		this.horainicio = horainicio;
 		this.horafinal = horafinal;
-		this.turno = turno;
+		this.lote = lote;
 		this.status = status;
 		this.numero = numero;
 		this.nome = nome;
@@ -66,7 +66,7 @@ public class ProducaoRel {
 		this.tempomaquina = obj.getTempomaquina();
 		this.horainicio = obj.getHorainicio();
 		this.horafinal = obj.getHorafinal();
-		this.turno = obj.getTurno();
+		this.lote = obj.getLote();
 		this.numero = obj.getMaquina().getNumero();
 		this.nome = obj.getProduto().getNome();
 		this.maquina_id = obj.getMaquina().getId();
@@ -153,12 +153,12 @@ public class ProducaoRel {
 		this.horafinal = horafinal;
 	}
 
-	public String getTurno() {
-		return turno;
+	public String getLote() {
+		return lote;
 	}
 
-	public void setTurno(String turno) {
-		this.turno = turno;
+	public void setLote(String lote) {
+		this.lote = lote;
 	}
 
 	public String getStatus() {

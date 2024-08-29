@@ -15,7 +15,7 @@ public class ProducaoNewDTO {
 	private OffsetDateTime dataproducao;
 	private String horainicio;
 	private String horafinal;
-	private String turno;
+	private String lote;
 	private Boolean status = Boolean.TRUE;
 	private Integer operadorID;
 	private Integer maquinaID;
@@ -26,7 +26,7 @@ public class ProducaoNewDTO {
 	}
 
 	public ProducaoNewDTO(Integer id, String obs, Date dataprevicao, Integer quantidade, String cor, Integer perda,
-			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String turno,
+			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String lote,
 			Boolean status, Integer operadorID, Integer maquinaID, Integer produtoID, Integer funfuncionarioID) {
 		this.id = id;
 		this.obs = obs;
@@ -38,7 +38,7 @@ public class ProducaoNewDTO {
 		this.dataproducao = dataproducao;
 		this.horainicio = horainicio;
 		this.horafinal = horafinal;
-		this.turno = turno;
+		this.lote = lote;
 		this.status = status;
 		this.operadorID = operadorID;
 		this.maquinaID = maquinaID;
@@ -118,12 +118,12 @@ public class ProducaoNewDTO {
 		this.horafinal = horafinal;
 	}
 
-	public String getTurno() {
-		return turno;
+	public String getLote() {
+		return lote;
 	}
 
-	public void setTurno(String turno) {
-		this.turno = turno;
+	public void setLote(String lote) {
+		this.lote = lote;
 	}
 
 	public Integer getOperadorID() {

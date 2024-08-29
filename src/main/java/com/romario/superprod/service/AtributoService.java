@@ -37,7 +37,7 @@ public class AtributoService {
 	
 	
 	public List<AtributoFlat> findAllSql() {
-		List<Atributo> atributos = atributoRepository.findAllSql(tenantUsuario.buscarOuFalharInt());
+		List<Atributo> atributos = atributoRepository.findAllSql();
 		List<AtributoFlat> atributoFlat = new ArrayList<>();
 		for (Atributo obj : atributos) {
 			AtributoFlat atriFlat = new AtributoFlat(obj);
@@ -56,6 +56,16 @@ public class AtributoService {
 	public List<AtributoFlat> findAllSqlInativo() {
 		List<AtributoFlat> atributoFlat = new ArrayList<AtributoFlat>();
 		List<Atributo> atributos = atributoRepository.findAllSqlInativo(tenantUsuario.buscarOuFalharInt());
+		for (Atributo atributo : atributos) {
+			AtributoFlat atriFlat = new AtributoFlat(atributo);
+			atributoFlat.add(atriFlat);
+		}
+		return atributoFlat;
+	}
+	
+	public List<AtributoFlat> findAllSqlAtivo() {
+		List<AtributoFlat> atributoFlat = new ArrayList<AtributoFlat>();
+		List<Atributo> atributos = atributoRepository.findAllSqlAtivo(tenantUsuario.buscarOuFalharInt());
 		for (Atributo atributo : atributos) {
 			AtributoFlat atriFlat = new AtributoFlat(atributo);
 			atributoFlat.add(atriFlat);
