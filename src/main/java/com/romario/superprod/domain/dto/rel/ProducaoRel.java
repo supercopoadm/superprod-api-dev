@@ -13,7 +13,6 @@ public class ProducaoRel {
 	private OffsetDateTime dataproducao;
 	private Integer quantidade;
 	private String piguimento;
-	private String cor;
 	private Integer perda;
 	private Integer tempomaquina;
 	private String horainicio;
@@ -31,7 +30,7 @@ public class ProducaoRel {
 	}
 
 	public ProducaoRel(Integer id, String obs, Date dataprevisao, OffsetDateTime dataproducao, Integer quantidade,
-			String piguimento, String cor, Integer perda, Integer tempomaquina, String horainicio, String horafinal,
+			String piguimento, Integer perda, Integer tempomaquina, String horainicio, String horafinal,
 			String lote, String status, Integer numero, String nome, Integer maquina_id, Integer produto_id,
 			Integer operador_id, Integer tenant_id) {
 		this.id = id;
@@ -40,7 +39,6 @@ public class ProducaoRel {
 		this.dataproducao = dataproducao;
 		this.quantidade = quantidade;
 		this.piguimento = piguimento;
-		this.cor = cor;
 		this.perda = perda;
 		this.tempomaquina = tempomaquina;
 		this.horainicio = horainicio;
@@ -57,8 +55,7 @@ public class ProducaoRel {
 
 	public ProducaoRel(Producao obj) {
 		this.id = obj.getId();
-		this.obs = obj.getObs();
-		this.cor = obj.getCor();
+		this.obs = obj.getObs();;
 		this.quantidade = obj.getQuantidade();
 		this.dataprevisao = obj.getDataprevisao();
 		this.dataproducao = obj.getDataproducao();
@@ -111,14 +108,6 @@ public class ProducaoRel {
 
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
-	}
-
-	public String getCor() {
-		return cor;
-	}
-
-	public void setCor(String cor) {
-		this.cor = cor;
 	}
 
 	public Integer getPerda() {

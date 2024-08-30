@@ -28,7 +28,6 @@ public class Producao {
 	private String obs;
 	private Date dataprevisao;
 	private Integer quantidade;
-	private String cor;
 	private Integer perda;
 	private Integer tempomaquina;
 	private OffsetDateTime dataproducao;
@@ -61,7 +60,7 @@ public class Producao {
 	public Producao() {
 	}
 
-	public Producao(Integer id, String obs, Date dataprevisao, Integer quantidade, String cor, Integer perda,
+	public Producao(Integer id, String obs, Date dataprevisao, Integer quantidade, Integer perda,
 			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String lote,
 			Boolean status, Operador operador, Tenant tenant, Maquina maquina, Produto produto, List<LogSistema> logs, Funcionario funcionario,
 			Atributo atributo) {
@@ -69,7 +68,6 @@ public class Producao {
 		this.obs = obs;
 		this.dataprevisao = dataprevisao;
 		this.quantidade = quantidade;
-		this.cor = cor;
 		this.perda = perda;
 		this.tempomaquina = tempomaquina;
 		this.dataproducao = dataproducao;
@@ -91,7 +89,6 @@ public class Producao {
 		this.obs = obj.getObs();
 		this.dataprevisao = obj.getDataprevicao();
 		this.quantidade = obj.getQuantidade();
-		this.cor = obj.getCor();
 		this.perda = obj.getPerda();
 		this.tempomaquina = obj.getTempomaquina();
 		this.dataproducao = obj.getDataproducao();
@@ -106,7 +103,6 @@ public class Producao {
 		this.obs = obj.getObs();
 		this.dataprevisao = obj.getDataprevisao();
 		this.quantidade = obj.getQuantidade();
-		this.cor = obj.getCor();
 		this.perda = obj.getPerda();
 		this.tempomaquina = obj.getTempomaquina();
 		this.dataproducao = obj.getDataproducao();
@@ -126,7 +122,6 @@ public class Producao {
 		this.obs = obj.getObs();
 		this.dataprevisao = obj.getDataprevisao();
 		this.quantidade = obj.getQuantidade();
-		this.cor = obj.getCor();
 		this.perda = obj.getPerda();
 		this.tempomaquina = obj.getTempomaquina();
 		this.dataproducao = obj.getDataproducao();
@@ -171,14 +166,6 @@ public class Producao {
 
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
-	}
-
-	public String getCor() {
-		return cor;
-	}
-
-	public void setCor(String cor) {
-		this.cor = cor;
 	}
 
 	public Integer getPerda() {
