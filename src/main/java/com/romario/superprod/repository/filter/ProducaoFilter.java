@@ -12,6 +12,7 @@ public class ProducaoFilter {
 	private Date dataprevisaode;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dataprevisaoate;
+	private String motivoperda;
 	private String quantidade;
 	private String perda;
 	private String tempomaquina;
@@ -167,6 +168,14 @@ public class ProducaoFilter {
 
 	public void setDataprevisaoate(Date dataprevisaoate) {
 		this.dataprevisaoate = dataprevisaoate;
+	}
+	
+	public String getMotivoperda() {
+		return motivoperda;
+	}
+
+	public void setMotivoperda(String motivoperda) {
+		this.motivoperda = motivoperda;
 	}
 
 	public Date getDataproducaode() {

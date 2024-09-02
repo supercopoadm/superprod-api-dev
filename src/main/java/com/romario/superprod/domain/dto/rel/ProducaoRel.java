@@ -10,9 +10,9 @@ public class ProducaoRel {
 	private Integer id;
 	private String obs;
 	private Date dataprevisao;
+	private String motivoperda;
 	private OffsetDateTime dataproducao;
 	private Integer quantidade;
-	private String piguimento;
 	private Integer perda;
 	private Integer tempomaquina;
 	private String horainicio;
@@ -29,16 +29,16 @@ public class ProducaoRel {
 	public ProducaoRel() {
 	}
 
-	public ProducaoRel(Integer id, String obs, Date dataprevisao, OffsetDateTime dataproducao, Integer quantidade,
-			String piguimento, Integer perda, Integer tempomaquina, String horainicio, String horafinal,
+	public ProducaoRel(Integer id, String obs, Date dataprevisao, String motivoperda, OffsetDateTime dataproducao, Integer quantidade,
+			Integer perda, Integer tempomaquina, String horainicio, String horafinal,
 			String lote, String status, Integer numero, String nome, Integer maquina_id, Integer produto_id,
 			Integer operador_id, Integer tenant_id) {
 		this.id = id;
 		this.obs = obs;
 		this.dataprevisao = dataprevisao;
+		this.motivoperda = motivoperda;
 		this.dataproducao = dataproducao;
 		this.quantidade = quantidade;
-		this.piguimento = piguimento;
 		this.perda = perda;
 		this.tempomaquina = tempomaquina;
 		this.horainicio = horainicio;
@@ -58,6 +58,7 @@ public class ProducaoRel {
 		this.obs = obj.getObs();;
 		this.quantidade = obj.getQuantidade();
 		this.dataprevisao = obj.getDataprevisao();
+		this.motivoperda = obj.getMotivoperda();
 		this.dataproducao = obj.getDataproducao();
 		this.perda = obj.getPerda();
 		this.tempomaquina = obj.getTempomaquina();
@@ -101,7 +102,15 @@ public class ProducaoRel {
 	public void setDataprevisao(Date dataprevisao) {
 		this.dataprevisao = dataprevisao;
 	}
+	
+	public String getMotivoperda() {
+		return motivoperda;
+	}
 
+	public void setMotivoperda(String motivoperda) {
+		this.motivoperda = motivoperda;
+	}
+	
 	public Integer getQuantidade() {
 		return quantidade;
 	}
@@ -180,14 +189,6 @@ public class ProducaoRel {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String getPiguimento() {
-		return piguimento;
-	}
-
-	public void setPiguimento(String piguimento) {
-		this.piguimento = piguimento;
 	}
 
 	public Integer getMaquina_id() {

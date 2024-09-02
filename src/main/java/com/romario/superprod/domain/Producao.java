@@ -27,6 +27,7 @@ public class Producao {
 	private Integer id;
 	private String obs;
 	private Date dataprevisao;
+	private String motivoperda;
 	private Integer quantidade;
 	private Integer perda;
 	private Integer tempomaquina;
@@ -60,13 +61,14 @@ public class Producao {
 	public Producao() {
 	}
 
-	public Producao(Integer id, String obs, Date dataprevisao, Integer quantidade, Integer perda,
+	public Producao(Integer id, String obs, Date dataprevisao, String motivoperda, Integer quantidade, Integer perda,
 			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String lote,
 			Boolean status, Operador operador, Tenant tenant, Maquina maquina, Produto produto, List<LogSistema> logs, Funcionario funcionario,
 			Atributo atributo) {
 		this.id = id;
 		this.obs = obs;
 		this.dataprevisao = dataprevisao;
+		this.motivoperda = motivoperda;
 		this.quantidade = quantidade;
 		this.perda = perda;
 		this.tempomaquina = tempomaquina;
@@ -88,6 +90,7 @@ public class Producao {
 		this.id = obj.getId();
 		this.obs = obj.getObs();
 		this.dataprevisao = obj.getDataprevicao();
+		this.motivoperda = obj.getMotivoperda();
 		this.quantidade = obj.getQuantidade();
 		this.perda = obj.getPerda();
 		this.tempomaquina = obj.getTempomaquina();
@@ -102,6 +105,7 @@ public class Producao {
 		this.id = obj.getId();
 		this.obs = obj.getObs();
 		this.dataprevisao = obj.getDataprevisao();
+		this.motivoperda = obj.getMotivoperda();
 		this.quantidade = obj.getQuantidade();
 		this.perda = obj.getPerda();
 		this.tempomaquina = obj.getTempomaquina();
@@ -121,6 +125,7 @@ public class Producao {
 		this.id = obj.getId();
 		this.obs = obj.getObs();
 		this.dataprevisao = obj.getDataprevisao();
+		this.motivoperda = obj.getMotivoperda();
 		this.quantidade = obj.getQuantidade();
 		this.perda = obj.getPerda();
 		this.tempomaquina = obj.getTempomaquina();
@@ -158,6 +163,14 @@ public class Producao {
 
 	public void setDataprevisao(Date dataprevisao) {
 		this.dataprevisao = dataprevisao;
+	}
+	
+	public String getMotivoperda() {
+		return motivoperda;
+	}
+
+	public void setMotivoperda(String motivoperda) {
+		this.motivoperda = motivoperda;
 	}
 
 	public Integer getQuantidade() {

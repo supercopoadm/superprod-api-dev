@@ -131,6 +131,7 @@ public class ProducaoService {
 		novoObj.setIdatributo(producao.getAtributo().getId());
 		
 		producao.setDataprevisao(novoObj.getDataprevisao());
+		producao.setMotivoperda(novoObj.getMotivoperda());
 		producao.setDataproducao(novoObj.getDataproducao());
 		producao.setHorainicio(novoObj.getHorainicio());
 		producao.setHorafinal(novoObj.getHorafinal());

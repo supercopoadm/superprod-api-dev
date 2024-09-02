@@ -14,6 +14,7 @@ public class ProducaoDTO {
 	private Integer id;
 	private String obs;
 	private Date dataprevisao;
+	private String motivoperda;
 	private Integer quantidade;
 	private Integer perda;
 	private Integer tempomaquina;
@@ -41,7 +42,7 @@ public class ProducaoDTO {
 	public ProducaoDTO() {
 	}
 
-	public ProducaoDTO(Integer id, String obs, Date dataprevisao, Integer quantidade, Integer perda,
+	public ProducaoDTO(Integer id, String obs, Date dataprevisao, String motivoperda, Integer quantidade, Integer perda,
 			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String lote,
 			Boolean status, Operador operador, Integer idoperador, String nomeoperador, Maquina maquina,
 			Integer idmaquina, Integer nomemaquina, Produto produto, Integer idproduto, String nomeproduto,
@@ -51,6 +52,7 @@ public class ProducaoDTO {
 		this.id = id;
 		this.obs = obs;
 		this.dataprevisao = dataprevisao;
+		this.motivoperda = motivoperda;
 		this.quantidade = quantidade;
 		this.perda = perda;
 		this.tempomaquina = tempomaquina;
@@ -98,6 +100,14 @@ public class ProducaoDTO {
 
 	public void setDataprevisao(Date dataprevisao) {
 		this.dataprevisao = dataprevisao;
+	}
+	
+	public String getMotivoperda() {
+		return motivoperda;
+	}
+
+	public void setMotivoperda(String motivoperda) {
+		this.motivoperda = motivoperda;
 	}
 
 	public Integer getQuantidade() {
@@ -240,6 +250,7 @@ public class ProducaoDTO {
 		this.id = obj.getId();
 		this.obs = obj.getObs();
 		this.dataprevisao = obj.getDataprevisao();
+		this.motivoperda = obj.getMotivoperda();
 		this.quantidade = obj.getQuantidade();
 		this.perda = obj.getPerda();
 		this.tempomaquina = obj.getTempomaquina();
