@@ -14,6 +14,7 @@ public class MoldeFlat {
 	private Integer id;
 	private String nome;
 	private String sku;
+	private Integer cavidades;
 	private String molde;
 	@JsonFormat(pattern = "yyyy/MM/dd HH:mm:ss:SSSXXX")
 	@Column(columnDefinition = "datetime")
@@ -24,12 +25,13 @@ public class MoldeFlat {
 	public MoldeFlat() {
 	}
 
-	public MoldeFlat(Integer id, String nome, String sku, OffsetDateTime datagravacao, String loginusuario,
+	public MoldeFlat(Integer id, String nome, String sku, Integer cavidades, OffsetDateTime datagravacao, String loginusuario,
 			Boolean status) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.sku = sku;
+		this.cavidades = cavidades;
 		this.datagravacao = datagravacao;
 		this.loginusuario = loginusuario;
 		this.status = status;
@@ -41,6 +43,7 @@ public class MoldeFlat {
 		this.datagravacao = obj.getLogs().getDatagravacao();
 		this.loginusuario = obj.getLogs().getLoginusuario();
 		this.sku = obj.getSku();
+		this.cavidades = obj.getCavidades();
 		this.status = obj.getStatus();
 
 	}
@@ -76,6 +79,14 @@ public class MoldeFlat {
 
 	public void setSku(String sku) {
 		this.sku = sku;
+	}
+	
+	public Integer getCavidades() {
+		return cavidades;
+	}
+	
+	public void setCavidades(Integer cavidades) {
+		this.cavidades = cavidades;
 	}
 
 	public OffsetDateTime getDatagravacao() {

@@ -72,9 +72,6 @@ public class RelProducao {
 		JasperPrint jasperPrint = JasperFillManager.fillReport(inputStream, parametros,jrb);
 		
 		return JasperExportManager.exportReportToPdf(jasperPrint);
-		
-	
-
 	}
 	
 	public byte[] molde(Integer tenant) throws Exception {

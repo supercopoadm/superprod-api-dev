@@ -15,8 +15,8 @@ public class ProducaoFlat {
 	private Integer id;
 	private String obs;
 	private Date dataprevisao;
+	private String motivoperda;
 	private Integer quantidade;
-	private String cor;
 	private Integer perda;
 	private Integer tempomaquina;
 	private OffsetDateTime dataproducao;
@@ -46,7 +46,7 @@ public class ProducaoFlat {
 	public ProducaoFlat() {
 	}
 
-	public ProducaoFlat(Integer id, String obs, Date dataprevisao, Integer quantidade, String cor, Integer perda,
+	public ProducaoFlat(Integer id, String obs, Date dataprevisao, String motivoperda, Integer quantidade, Integer perda,
 			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String lote,
 			Operador operador, Integer idoperador, String nomeOperador, Maquina maquina, Integer idmaquina,
 			Integer nomeMaquina, Produto produto, Integer idprouto, String nomeProduto, Funcionario funcionario,
@@ -55,8 +55,8 @@ public class ProducaoFlat {
 		this.id = id;
 		this.obs = obs;
 		this.dataprevisao = dataprevisao;
+		this.motivoperda = motivoperda;
 		this.quantidade = quantidade;
-		this.cor = cor;
 		this.perda = perda;
 		this.tempomaquina = tempomaquina;
 		this.dataproducao = dataproducao;
@@ -87,8 +87,8 @@ public class ProducaoFlat {
 		this.id = obj.getId();
 		this.obs = obj.getObs();
 		this.dataprevisao = obj.getDataprevisao();
+		this.motivoperda = obj.getMotivoperda();
 		this.quantidade = obj.getQuantidade();
-		this.cor = obj.getCor();
 		this.perda = obj.getPerda();
 		this.tempomaquina = obj.getTempomaquina();
 		this.dataproducao = obj.getDataproducao();
@@ -123,8 +123,8 @@ public class ProducaoFlat {
 		this.id = obj.getId();
 		this.obs = obj.getObs();
 		this.dataprevisao = obj.getDataprevisao();
+		this.motivoperda = obj.getMotivoperda();
 		this.quantidade = obj.getQuantidade();
-		this.cor = obj.getCor();
 		this.perda = obj.getPerda();
 		this.tempomaquina = obj.getTempomaquina();
 		this.dataproducao = obj.getDataproducao();
@@ -167,6 +167,14 @@ public class ProducaoFlat {
 	public void setDataprevisao(Date dataprevisao) {
 		this.dataprevisao = dataprevisao;
 	}
+	
+	public String getMotivoperda() {
+		return motivoperda;
+	}
+
+	public void setMotivoperda(String motivoperda) {
+		this.motivoperda = motivoperda;
+	}
 
 	public Integer getQuantidade() {
 		return quantidade;
@@ -174,14 +182,6 @@ public class ProducaoFlat {
 
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
-	}
-
-	public String getCor() {
-		return cor;
-	}
-
-	public void setCor(String cor) {
-		this.cor = cor;
 	}
 
 	public Integer getPerda() {

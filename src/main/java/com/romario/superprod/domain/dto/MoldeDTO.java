@@ -15,15 +15,17 @@ public class MoldeDTO {
 
 	private String nome;
 	private String sku;
+	private Integer cavidades;
 	private Boolean status = Boolean.TRUE;
 
 	public MoldeDTO() {
 	}
 
-	public MoldeDTO(Integer id, String nome, String sku, Boolean status) {
+	public MoldeDTO(Integer id, String nome, String sku, Integer cavidades, Boolean status) {
 		this.id = id;
 		this.nome = nome;
 		this.sku = sku;
+		this.cavidades = cavidades;
 		this.status = status;
 	}
 
@@ -49,6 +51,14 @@ public class MoldeDTO {
 
 	public void setSku(String sku) {
 		this.sku = sku;
+	}
+	
+	public Integer getCavidades() {
+		return cavidades;
+	}
+
+	public void setCavidades(Integer cavidades) {
+		this.cavidades = cavidades;
 	}
 
 	public Boolean getStatus() {

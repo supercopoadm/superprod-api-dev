@@ -12,8 +12,8 @@ public class ProducaoFilter {
 	private Date dataprevisaode;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dataprevisaoate;
+	private String motivoperda;
 	private String quantidade;
-	private String cor;
 	private String perda;
 	private String tempomaquina;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -63,14 +63,6 @@ public class ProducaoFilter {
 
 	public void setQuantidade(String quantidade) {
 		this.quantidade = quantidade;
-	}
-
-	public String getCor() {
-		return cor;
-	}
-
-	public void setCor(String cor) {
-		this.cor = cor;
 	}
 
 	public String getPerda() {
@@ -176,6 +168,14 @@ public class ProducaoFilter {
 
 	public void setDataprevisaoate(Date dataprevisaoate) {
 		this.dataprevisaoate = dataprevisaoate;
+	}
+	
+	public String getMotivoperda() {
+		return motivoperda;
+	}
+
+	public void setMotivoperda(String motivoperda) {
+		this.motivoperda = motivoperda;
 	}
 
 	public Date getDataproducaode() {

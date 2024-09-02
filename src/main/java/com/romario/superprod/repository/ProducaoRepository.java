@@ -30,9 +30,9 @@ public interface ProducaoRepository extends JpaRepository<Producao, Integer>, Pr
 	Producao findPorId(Integer id);
 
 	
-	@Query(value = "select p.id, p.dataprevisao, p.dataproducao, \r\n"
-			+ "p.horainicio, p.horafinal, p.obs, p.piguimento, p.perda, p.tempomaquina, p.status, p.funcionario_id,\r\n"
-			+ "p.cor, p.quantidade, p.maquina_id, p.produto_id, p.operador_id, p.tenant_id, p.atributo_id, p.lote from producao p, maquina m, produto pr, operador o \r\n"
+	@Query(value = "select p.id, p.dataprevisao, p.motivoperda, p.dataproducao, \r\n"
+			+ "p.horainicio, p.horafinal, p.obs, p.perda, p.tempomaquina, p.status, p.funcionario_id,\r\n"
+			+ "p.quantidade, p.maquina_id, p.produto_id, p.operador_id, p.tenant_id, p.atributo_id, p.lote from producao p, maquina m, produto pr, operador o \r\n"
 			+ "where m.id = p.maquina_id and pr.id = p.produto_id and o.id = p.operador_id and p.dataprevisao between ? and ? and p.tenant_id = ?", nativeQuery = true)
 	List<Producao> porDatas(String ini, String fim, Integer tenant);
 
