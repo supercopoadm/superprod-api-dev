@@ -24,6 +24,7 @@ public class Molde {
 	private Integer id;
 	private String nome;
 	private String sku;
+	private Integer cavidades;
 	@ManyToOne
 	private Tenant tenant;
 	
@@ -39,11 +40,12 @@ public class Molde {
 	}
 
 
-	public Molde(Integer id, String nome, String sku, Tenant tenant, Integer produto_id, Boolean status,
+	public Molde(Integer id, String nome, String sku, Integer cavidades, Tenant tenant, Integer produto_id, Boolean status,
 			List<LogSistema> logs) {
 		this.id = id;
 		this.nome = nome;
 		this.sku = sku;
+		this.cavidades = cavidades;
 		this.tenant = tenant;
 		this.produto_id = produto_id;
 		this.status = status;
@@ -55,6 +57,7 @@ public class Molde {
 		this.id = obj.getId();
 		this.nome = obj.getNome();
 		this.sku = obj.getSku();
+		this.cavidades = obj.getCavidades();
 		this.status = obj.getStatus();
 	}
 
@@ -62,6 +65,7 @@ public class Molde {
 		this.id = obj.getId();
 		this.nome = obj.getNome();
 		this.sku = obj.getSku();
+		this.cavidades = obj.getCavidades();
 		this.status = obj.getStatus();
 	}
 	
@@ -89,6 +93,14 @@ public class Molde {
 
 	public void setSku(String sku) {
 		this.sku = sku;
+	}
+	
+	public Integer getCavidades() {
+		return cavidades;
+	}
+
+	public void setCavidades(Integer cavidades) {
+		this.cavidades = cavidades;
 	}
 
 	public Tenant getTenant() {

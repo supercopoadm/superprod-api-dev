@@ -5,6 +5,7 @@ public class MoldeFilter {
 	private String id;
 	private String nome;
 	private String sku;
+	private Integer cavidades;
 	private String status;
 	private String produto_id;
 	private String loginusuario;
@@ -31,6 +32,14 @@ public class MoldeFilter {
 
 	public void setSku(String sku) {
 		this.sku = sku;
+	}
+	
+	public Integer getCavidades() {
+		return cavidades;
+	}
+
+	public void setCavidades(Integer cavidades) {
+		this.cavidades = cavidades;
 	}
 
 	public String getStatus() {
