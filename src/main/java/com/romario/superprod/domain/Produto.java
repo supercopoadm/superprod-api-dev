@@ -25,6 +25,7 @@ public class Produto {
 	private Integer id;
 	private String nome;
 	private String sku;
+	private Float peso;
 
 	private Boolean status = Boolean.TRUE;
 
@@ -38,10 +39,11 @@ public class Produto {
 	public Produto() {
 	}
 
-	public Produto(Integer id, String nome, String sku, Boolean status, Tenant tenant, List<LogSistema> logs) {
+	public Produto(Integer id, String nome, String sku, Float peso, Boolean status, Tenant tenant, List<LogSistema> logs) {
 		this.id = id;
 		this.nome = nome;
 		this.sku = sku;
+		this.peso = peso;
 		this.status = status;
 		this.tenant = tenant;
 		this.logs = logs;
@@ -51,6 +53,7 @@ public class Produto {
 		this.id = obj.getId();
 		this.nome = obj.getNome();
 		this.sku = obj.getSku();
+		this.peso = obj.getPeso();
 		this.status = obj.getStatus();
 		
 	}
@@ -60,6 +63,7 @@ public class Produto {
 		this.id = obj.getId();
 		this.nome = obj.getNome();
 		this.sku = obj.getSku();
+		this.peso = obj.getPeso();
 		this.status = obj.getStatus();
 		
 	}
@@ -68,6 +72,7 @@ public class Produto {
 		this.id = obj.getId();
 		this.nome = obj.getNome();
 		this.sku = obj.getSku();
+		this.peso = obj.getPeso();
 		this.status = obj.getStatus();
 	}
 
@@ -93,6 +98,14 @@ public class Produto {
 
 	public void setSku(String sku) {
 		this.sku = sku;
+	}
+	
+	public Float getPeso() {
+		return peso;
+	}
+
+	public void setPeso(Float peso) {
+		this.peso = peso;
 	}
 
 	public Boolean getStatus() {

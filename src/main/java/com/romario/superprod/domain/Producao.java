@@ -29,8 +29,8 @@ public class Producao {
 	private Date dataprevisao;
 	private String motivoperda;
 	private Integer quantidade;
-	private Integer perda;
-	private Integer tempomaquina;
+	private Float perda;
+	private Float tempomaquina;
 	private OffsetDateTime dataproducao;
 	private String horainicio;
 	private String horafinal;
@@ -61,8 +61,8 @@ public class Producao {
 	public Producao() {
 	}
 
-	public Producao(Integer id, String obs, Date dataprevisao, String motivoperda, Integer quantidade, Integer perda,
-			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String lote,
+	public Producao(Integer id, String obs, Date dataprevisao, String motivoperda, Integer quantidade, Float perda,
+			Float tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String lote,
 			Boolean status, Operador operador, Tenant tenant, Maquina maquina, Produto produto, List<LogSistema> logs, Funcionario funcionario,
 			Atributo atributo) {
 		this.id = id;
@@ -181,19 +181,19 @@ public class Producao {
 		this.quantidade = quantidade;
 	}
 
-	public Integer getPerda() {
+	public Float getPerda() {
 		return perda;
 	}
 
-	public void setPerda(Integer perda) {
+	public void setPerda(Float perda) {
 		this.perda = perda;
 	}
 
-	public Integer getTempomaquina() {
+	public Float getTempomaquina() {
 		return tempomaquina;
 	}
 
-	public void setTempomaquina(Integer tempomaquina) {
+	public void setTempomaquina(Float tempomaquina) {
 		this.tempomaquina = tempomaquina;
 	}
 
