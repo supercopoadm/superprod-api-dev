@@ -10,8 +10,8 @@ public class ProducaoNewDTO {
 	private Date dataprevicao;
 	private String motivoperda;
 	private Integer quantidade;
-	private Integer perda;
-	private Integer tempomaquina;
+	private Float perda;
+	private Float tempomaquina;
 	private OffsetDateTime dataproducao;
 	private String horainicio;
 	private String horafinal;
@@ -25,8 +25,8 @@ public class ProducaoNewDTO {
 	public ProducaoNewDTO() {
 	}
 
-	public ProducaoNewDTO(Integer id, String obs, Date dataprevicao, String motivoperda, Integer quantidade, Integer perda,
-			Integer tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String lote,
+	public ProducaoNewDTO(Integer id, String obs, Date dataprevicao, String motivoperda, Integer quantidade, Float perda,
+			Float tempomaquina, OffsetDateTime dataproducao, String horainicio, String horafinal, String lote,
 			Boolean status, Integer operadorID, Integer maquinaID, Integer produtoID, Integer funfuncionarioID) {
 		this.id = id;
 		this.obs = obs;
@@ -70,19 +70,19 @@ public class ProducaoNewDTO {
 		this.quantidade = quantidade;
 	}
 
-	public Integer getPerda() {
+	public Float getPerda() {
 		return perda;
 	}
 
-	public void setPerda(Integer perda) {
+	public void setPerda(Float perda) {
 		this.perda = perda;
 	}
 
-	public Integer getTempomaquina() {
+	public Float getTempomaquina() {
 		return tempomaquina;
 	}
 
-	public void setTempomaquina(Integer tempomaquina) {
+	public void setTempomaquina(Float tempomaquina) {
 		this.tempomaquina = tempomaquina;
 	}
 

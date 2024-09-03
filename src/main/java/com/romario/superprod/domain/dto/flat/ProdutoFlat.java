@@ -9,6 +9,7 @@ public class ProdutoFlat {
 	private Integer id;
 	private String nome;
 	private String sku;
+	private Float peso;
 	private Boolean status = Boolean.TRUE;
 	private OffsetDateTime datagravacao;
 	private String loginusuario;
@@ -16,11 +17,12 @@ public class ProdutoFlat {
 	public ProdutoFlat() {
 	}
 
-	public ProdutoFlat(Integer id, String nome, String sku, Boolean status, OffsetDateTime datagravacao,
+	public ProdutoFlat(Integer id, String nome, String sku, Float peso, Boolean status, OffsetDateTime datagravacao,
 			String loginusuario) {
 		this.id = id;
 		this.nome = nome;
 		this.sku = sku;
+		this.peso = peso;
 		this.status = status;
 		this.datagravacao = datagravacao;
 		this.loginusuario = loginusuario;
@@ -30,6 +32,7 @@ public class ProdutoFlat {
 		this.id = obj.getId();
 		this.nome = obj.getNome();
 		this.sku = obj.getSku();
+		this.peso = obj.getPeso();
 		this.status = obj.getStatus();
 		this.datagravacao = obj.getLogs().getDatagravacao();
 		this.loginusuario = obj.getLogs().getLoginusuario();
@@ -58,6 +61,14 @@ public class ProdutoFlat {
 
 	public void setSku(String sku) {
 		this.sku = sku;
+	}
+	
+	public Float getPeso() {
+		return peso;
+	}
+
+	public void setPeso(Float peso) {
+		this.peso = peso;
 	}
 
 	public Boolean getStatus() {

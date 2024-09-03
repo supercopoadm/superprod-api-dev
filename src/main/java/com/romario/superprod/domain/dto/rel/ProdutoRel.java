@@ -7,6 +7,7 @@ public class ProdutoRel {
 	private Integer id;
 	private String nome;
 	private String sku;
+	private Float peso;
 	private String status;
 	
 	
@@ -17,6 +18,7 @@ public class ProdutoRel {
 		this.id = obj.getId();
 		this.nome = obj.getNome();
 		this.sku = obj.getSku();
+		this.peso = obj.getPeso();
 		Boolean status = obj.getStatus();
 		if (status) {
 			this.status = "Ativo";
@@ -25,10 +27,11 @@ public class ProdutoRel {
 		}
 		
 	}
-	public ProdutoRel(Integer id, String nome, String sku, String status) {
+	public ProdutoRel(Integer id, String nome, String sku, Float peso, String status) {
 		this.id = id;
 		this.nome = nome;
 		this.sku = sku;
+		this.peso = peso;
 		this.status = status;
 	}
 	public Integer getId() {
@@ -48,6 +51,12 @@ public class ProdutoRel {
 	}
 	public void setSku(String sku) {
 		this.sku = sku;
+	}
+	public Float getPeso() {
+		return peso;
+	}
+	public void setPeso(Float peso) {
+		this.peso = peso;
 	}
 	public String getStatus() {
 		return status;

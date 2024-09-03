@@ -13,8 +13,8 @@ public class ProducaoRel {
 	private String motivoperda;
 	private OffsetDateTime dataproducao;
 	private Integer quantidade;
-	private Integer perda;
-	private Integer tempomaquina;
+	private Float perda;
+	private Float tempomaquina;
 	private String horainicio;
 	private String horafinal;
 	private String lote;
@@ -30,7 +30,7 @@ public class ProducaoRel {
 	}
 
 	public ProducaoRel(Integer id, String obs, Date dataprevisao, String motivoperda, OffsetDateTime dataproducao, Integer quantidade,
-			Integer perda, Integer tempomaquina, String horainicio, String horafinal,
+			Float perda, Float tempomaquina, String horainicio, String horafinal,
 			String lote, String status, Integer numero, String nome, Integer maquina_id, Integer produto_id,
 			Integer operador_id, Integer tenant_id) {
 		this.id = id;
@@ -119,19 +119,19 @@ public class ProducaoRel {
 		this.quantidade = quantidade;
 	}
 
-	public Integer getPerda() {
+	public Float getPerda() {
 		return perda;
 	}
 
-	public void setPerda(Integer perda) {
+	public void setPerda(Float perda) {
 		this.perda = perda;
 	}
 
-	public Integer getTempomaquina() {
+	public Float getTempomaquina() {
 		return tempomaquina;
 	}
 
-	public void setTempomaquina(Integer tempomaquina) {
+	public void setTempomaquina(Float tempomaquina) {
 		this.tempomaquina = tempomaquina;
 	}
 
