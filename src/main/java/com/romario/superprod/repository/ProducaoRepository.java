@@ -15,18 +15,17 @@ public interface ProducaoRepository extends JpaRepository<Producao, Integer>, Pr
 	@Query(value= "select * from producao where tenant_id = ? ", nativeQuery = true)
 	List<Producao> findAllSql(int id);
 	
-	
-	 @Query(value= "select c.* from convenio c, exame_convenio e\r\n" + 
+	@Query(value= "select c.* from convenio c, exame_convenio e\r\n" + 
 	    		"where c.id = e.convenio_id and e.exame_id = ?", nativeQuery = true)
 	List<Producao> findAllSqlProd(int id);
 
-	 @Query(value= "select * from producao where status = 0 and tenant_id = ?", nativeQuery = true)
+	@Query(value= "select * from producao where status = 0 and tenant_id = ?", nativeQuery = true)
 	List<Producao> findAllSqlInativo(int id);
 	 
-	 @Query(value= "select * from producao where status = 1 and tenant_id = ?", nativeQuery = true)
-		List<Producao> findAllSqlAtivo(int id);
+	@Query(value= "select * from producao where status = 1 and tenant_id = ?", nativeQuery = true)
+	List<Producao> findAllSqlAtivo(int id);
 
-	 @Query(value= "select * from producao where  id = ?", nativeQuery = true)
+	@Query(value= "select * from producao where  id = ?", nativeQuery = true)
 	Producao findPorId(Integer id);
 
 	

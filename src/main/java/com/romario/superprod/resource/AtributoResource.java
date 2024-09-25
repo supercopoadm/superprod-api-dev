@@ -37,7 +37,7 @@ public class AtributoResource {
 	public ResponseEntity<?> findAll() {
 		List<AtributoFlat> list = atributoService.findAllSql();
 		
-		return ResponseEntity.ok(list);
+		return ResponseEntity.ok().body(list);
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
