@@ -46,6 +46,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 		config.setAllowCredentials(true);
 		config.setAllowedHeaders(Arrays.asList("Authorization","Content-Type","Accept"));
 		config.addAllowedMethod("*");
+		config.addExposedHeader("Access-Control-Allow-Private-Network");
 		config.setMaxAge(3600L);
 		config.setAllowedOrigins(Arrays.asList("https://supercopoprod.vercel.app","http://localhost:4200","https://app-hml.uniradradiologia.com.br","https://app.uniradradiologia.com.br","https://outraempresa.com.br"));
 //		config.setAllowedOrigins(Arrays.asList("*"));
